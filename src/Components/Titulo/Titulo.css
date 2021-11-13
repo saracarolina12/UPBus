@@ -1,0 +1,17 @@
+.estiloTitulo {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+}
+.contenedorTitulo {
+    /* centrar */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    /* paddings */
+    padding:2%
+}
+.imgTitulo {
+    height: 70vh;
+    border-radius: 5%;
+}
