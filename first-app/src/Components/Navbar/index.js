@@ -8,7 +8,7 @@ import logo from './logo.png'
 
 function Navb() {
     return (
-    <Navbar collapseOnSelect expand="lg" variant="dark" className="colorNavb">
+    <Navbar fixed="top" collapseOnSelect expand="lg" variant="dark" className="colorNavb">
     <Container>
     <Navbar.Brand href="#home"><img img src={logo} alt="Logo" className="imgNavb"/></Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
