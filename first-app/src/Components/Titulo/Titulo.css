@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Vogue;
+    src: url(Vogue.ttf);
+}
 .estiloTitulo {
     color: black;
     font-family: 'Raleway', sans-serif;
@@ -15,3 +19,13 @@
     height: 70vh;
     border-radius: 5%;
 }
+.UpBus{
+    font-size: 300%;
+    font-family: Vogue;
+    margin-bottom: 0%;
+    margin-top: 2%;
+}
+.sub{
+    margin-bottom: 5%;
+}
+

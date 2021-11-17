@@ -18,7 +18,7 @@ function Navb() {
         <Nav.Link href="#DarRide">Dar ride</Nav.Link>
         </Nav>
         <Nav>
-        <Nav.Link href="#IniciarSesion">Iniciar sesión</Nav.Link>
+        <Nav.Link to="/" href={"#IniciarSesión"}>Iniciar sesión</Nav.Link>
         <Nav.Link eventKey={2} href="#Registrate">
             Regístrate
         </Nav.Link>

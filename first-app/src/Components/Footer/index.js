@@ -9,10 +9,12 @@ import "bootstrap/dist/css/bootstrap.min.css"
 function Foot() {
     return (
         <Container>
-            <Row>
+            {/* <Row>
                 <Col><img src={Logo} alt="Logo" className="imgFoot"/></Col>
                 <Col><p>© Universidad Panamericana Campus Bonaterra</p></Col>
-            </Row>
+            </Row> */}
+            <img src={Logo} alt="Logo" className="imgFoot"/>
+            <p className="textFoot">© Universidad Panamericana Campus Bonaterra</p>
         </Container>
     )
 }

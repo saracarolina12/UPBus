@@ -1,3 +1,9 @@
 .imgFoot {
-    height: 15vh;
+    width: 8%;
+    margin-left: -5%;
+    margin-bottom: -3%;
+}
+.textFoot{
+    margin-left: 73%;
+    margin-bottom: 3%;
 }
