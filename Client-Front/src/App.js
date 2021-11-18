@@ -4,7 +4,6 @@ import Titulo from './Components/Titulo';
 import Navb from './Components/Navbar';
 import Foot from './Components/Footer';
 
-
 function App() {
   return (
     <>

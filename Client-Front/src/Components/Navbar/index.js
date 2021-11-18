@@ -5,21 +5,25 @@ import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 import "bootstrap/dist/css/bootstrap.min.css"
 import logo from './logo.png'
+import IniciarSesion from './Paginas/IniciarSesion';
+import Registrar from './Paginas/Registrar';
+import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
 function Navb() {
     return (
+    
     <Navbar fixed="top" collapseOnSelect expand="lg" variant="dark" className="colorNavb">
     <Container>
     <Navbar.Brand href="#home"><img img src={logo} alt="Logo" className="imgNavb"/></Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-            <Nav.Link href="#PedirViaje" className="letra">Pedir viaje</Nav.Link>
-            <Nav.Link href="#DarRide">Dar ride</Nav.Link>
+            <NavLink exact to="/PedirViaje" className="letra">Pedir viaje</NavLink>
+            <NavLink exact to="/DarRide">Dar ride</NavLink>
         </Nav>
         <Nav>
-            <Nav.Link exact to="/iniciarsesion" >Iniciar sesión</Nav.Link>
-            <Nav.Link exact     to="/registrate" eventKey={2} >Regístrate</Nav.Link>
+            <NavLink exact to="/IniciarSesion" >Iniciar sesión</NavLink>
+            <NavLink exact to="/Registrar" >Regístrate</NavLink>
         </Nav>
     </Navbar.Collapse>
     </Container>
