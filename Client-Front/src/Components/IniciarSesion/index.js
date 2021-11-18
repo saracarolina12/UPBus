@@ -1,8 +1,9 @@
 import React from "react"
-import './index.css';
+import './Titulo.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Container from "react-bootstrap/esm/Container";
-function IniciarSesion() {
+import Primera from './1.jpg'
+function Titulo() {
     return (
         <Container className="IniciarSesion">
            
@@ -10,6 +11,6 @@ function IniciarSesion() {
     )
 }
 
-export default IniciarSesion;
+export default Titulo;
 
 //https://medium.com/@ethantcollins98/making-a-sometimes-fixed-navbar-157013dfc4a5
