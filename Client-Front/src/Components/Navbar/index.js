@@ -14,14 +14,12 @@ function Navb() {
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-        <Nav.Link href="#PedirViaje" className="letra">Pedir viaje</Nav.Link>
-        <Nav.Link href="#DarRide">Dar ride</Nav.Link>
+            <Nav.Link href="#PedirViaje" className="letra">Pedir viaje</Nav.Link>
+            <Nav.Link href="#DarRide">Dar ride</Nav.Link>
         </Nav>
         <Nav>
-        <Nav.Link to="/" href={"#IniciarSesión"}>Iniciar sesión</Nav.Link>
-        <Nav.Link eventKey={2} href="#Registrate">
-            Regístrate
-        </Nav.Link>
+            <Nav.Link exact to="/iniciarsesion" >Iniciar sesión</Nav.Link>
+            <Nav.Link exact     to="/registrate" eventKey={2} >Regístrate</Nav.Link>
         </Nav>
     </Navbar.Collapse>
     </Container>
