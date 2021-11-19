@@ -1,9 +1,5 @@
-@font-face {
-    font-family: titulo;
-    src: url(./Fragmentcore.otf);
-}
 .formulario{
-    margin-top:10%; 
+    
 }
 .cardheader{
     color: #e0dbd6cb;

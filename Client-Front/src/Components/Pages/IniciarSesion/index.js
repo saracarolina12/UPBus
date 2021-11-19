@@ -22,10 +22,10 @@ function IniciarSesion() {
                    <Form>
                         <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
                             <Form.Label column sm="2">
-                            Correo
+                            ID
                             </Form.Label>
                             <Col sm="10">
-                            <Form.Control  placeholder="email@example.com" />
+                            <Form.Control  placeholder="Introduce tu ID" />
                             </Col>
                         </Form.Group>
 
@@ -38,7 +38,9 @@ function IniciarSesion() {
                             </Col>
                         </Form.Group>
                         <center>
-                             <Button className="iniciarses">Iniciar Sesión</Button>
+                            <a href="/#olvidémicontraseña">¿Olvidaste tu contraseña?</a>
+                            <br/><br/>
+                            <Button className="iniciarses">Iniciar Sesión</Button>
                         </center>
                     </Form>
                 </Card.Text>

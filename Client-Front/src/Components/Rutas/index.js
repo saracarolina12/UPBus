@@ -5,6 +5,7 @@ import IniciarSesion from "../Pages/IniciarSesion"
 import PedirViaje from "../Pages/PedirViaje"
 import Registrate from "../Pages/Registrate";
 import DarRide from "../Pages/DarRide";
+import Olvidemicontraseña from "../Pages/IniciarSesion/Olvidemiconstraseña";
 
 const Rutas = () => {
     return (
@@ -17,6 +18,7 @@ const Rutas = () => {
                     <Route path="/DarRide" element = {<DarRide />} />
                     <Route path="/IniciarSesion" element = {<IniciarSesion/>} />
                     <Route path="/Registrarte" element = {<Registrate/>} />
+                    <Route path="/Olvidemiconstraseña" element={<Olvidemicontraseña/>} />       
                 </Routes>    
             </Router>
         </div>      
