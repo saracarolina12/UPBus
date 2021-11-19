@@ -1,5 +1,4 @@
 .formulario{
-    
 }
 .cardheader{
     color: #e0dbd6cb;
@@ -14,4 +13,9 @@
 }
 .cardborder{
     border-radius: 80%;
+}
+
+.iniciarses:hover {
+    background-color: #7b1634;
+    color: #fbefe1cb;
 }

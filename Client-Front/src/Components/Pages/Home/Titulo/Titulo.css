@@ -13,7 +13,7 @@
     flex-direction: column;
 
     /* paddings */
-    padding:8%
+    padding:8% 8% 3% 8%;
 }
 .imgTitulo {
     height: 70vh;

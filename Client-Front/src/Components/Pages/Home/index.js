@@ -3,10 +3,12 @@ import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Container from "react-bootstrap/esm/Container";
 import Titulo from "./Titulo";
+import ContenidoHome from "./Contenido";
 function Home() {
     return (
         <Container className="Titulo">
            <Titulo />
+           <ContenidoHome />
         </Container>
     )
 }

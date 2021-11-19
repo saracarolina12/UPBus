@@ -6,6 +6,10 @@ import Row from 'react-bootstrap/Row'
 import Col from "react-bootstrap/esm/Col";
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom';
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+
 
 function IniciarSesion() {
     return (
@@ -37,9 +41,8 @@ function IniciarSesion() {
                             <Form.Control type="password" placeholder="Ingresa tu contraseña" />
                             </Col>
                         </Form.Group>
-                        <center>
-                            <a href="/#olvidémicontraseña">¿Olvidaste tu contraseña?</a>
-                            <br/><br/>
+                        <center>   
+                            <Nav.Link componentClass={Link} href="/Olvidemicontraseña" to="/Olvidemicontraseña">¿Olvidaste tu contraseña?</Nav.Link>
                             <Button className="iniciarses">Iniciar Sesión</Button>
                         </center>
                     </Form>
