@@ -11,11 +11,7 @@ import Button from 'react-bootstrap/Button'
 function Registrate() {
     return (
         <Container className="formulario">
-           <Card
-                bg='#881739'
-                text='black'
-                style={{ width: '60%'}}
-            >
+           <Card bg='#881739' text='black' style={{ width: '60%'}}>
                 <Card.Header className="cardheader"><center><h4>Registrarse</h4></center></Card.Header>
                 <Card.Body className="cardbody">
                 <Card.Text>
@@ -46,7 +42,6 @@ function Registrate() {
                             <Form.Control type="password" placeholder="Ingresa tu contraseña" />
                             </Col>  
                         </Form.Group>
-
                         <center>
                              <Button className="registr">Registrar</Button>
                         </center>
@@ -54,7 +49,6 @@ function Registrate() {
                 </Card.Text>
                 </Card.Body>
             </Card>
-
         </Container>
     )
 }
