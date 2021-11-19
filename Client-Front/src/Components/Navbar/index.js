@@ -11,11 +11,10 @@ function Navb() {
     return (
     <Navbar fixed="top" collapseOnSelect expand="lg" variant="dark" className="colorNavb">
     <Container>
-    <Navbar.Brand href="#home"><img img src={logo} alt="Logo" className="imgNavb"/></Navbar.Brand>
+    <Navbar.Brand componentClass={Link} href="/" to="/"><img img src={logo} alt="Logo" className="imgNavb"/></Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-        <Nav.Link componentClass={Link} href="/" to="/">Home</Nav.Link>
             <Nav.Link componentClass={Link} href="/PedirViaje" to="/PedirViaje">Pedir viaje</Nav.Link>
             <Nav.Link componentClass={Link} href="/DarRide" to="/DarRide">Dar ride</Nav.Link>
         </Nav>
