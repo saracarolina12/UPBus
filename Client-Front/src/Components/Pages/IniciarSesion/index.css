@@ -1,18 +1,21 @@
-.formulario{
-    margin:20%;
-    
+@font-face {
+    font-family: titulo;
+    src: url(./Fragmentcore.otf);
 }
-
+.formulario{
+    margin-top:10%; 
+}
 .cardheader{
     color: #e0dbd6cb;
     background-color: #881739;
 }
-
 .cardbody{
     background-color: #EAD3C1;
 }
-
 .iniciarses{
     background-color: #881739;
     border: #881739;
+}
+.cardborder{
+    border-radius: 80%;
 }

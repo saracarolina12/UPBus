@@ -1,4 +1,3 @@
-import React from "react"
 import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Container from "react-bootstrap/esm/Container";
@@ -15,8 +14,9 @@ function IniciarSesion() {
                 bg='#881739'
                 text='black'
                 style={{ width: '60%'}}
+                className="cardborder"
             >
-                <Card.Header className="cardheader"><center><h4>Iniciar Sesión</h4></center></Card.Header>
+                <Card.Header className="cardheader"><center><h4>Para continuar, introduce tu usuario...</h4></center></Card.Header>
                 <Card.Body className="cardbody">
                 <Card.Text>
                    <Form>
@@ -45,11 +45,9 @@ function IniciarSesion() {
                 </Card.Body>
             </Card>
 
-           
+
         </Container>
     )
 }
-
 export default IniciarSesion;
-
 //https://medium.com/@ethantcollins98/making-a-sometimes-fixed-navbar-157013dfc4a5
