@@ -15,11 +15,11 @@ function Navb() {
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-            <Nav.Link componentClass={Link} href="/PedirViaje" to="/PedirViaje">Pedir viaje</Nav.Link>
+            <Nav.Link className="pedirviaje" componentClass={Link} href="/PedirViaje" to="/PedirViaje">Pedir viaje</Nav.Link>
             <Nav.Link componentClass={Link} href="/DarRide" to="/DarRide">Dar ride</Nav.Link>
         </Nav>
         <Nav>
-            <Nav.Link componentClass={Link} href="/IniciarSesion" to="/IniciarSesion">Iniciar Sesion</Nav.Link>
+            <Nav.Link className="pedirviaje" componentClass={Link} href="/IniciarSesion" to="/IniciarSesion">Iniciar Sesion</Nav.Link>
             <Nav.Link componentClass={Link} href="/Registrate" to="/Registrate" eventKey={2} >Regístrate</Nav.Link>
         </Nav>
     </Navbar.Collapse>

@@ -1,8 +1,16 @@
 .colorNavb {
     background-color: #881739;  
-    font-size: medium;
+    font-size: 117%;
 }
 
 .imgNavb {
-    height: 10vh;
+    margin-left: -50%;
+    height: 11vh;
+}
+.pedirviaje{
+    margin-left: -20%;
+}
+
+body {
+    background-color:rgba(255, 245, 233, 0.843);
 }

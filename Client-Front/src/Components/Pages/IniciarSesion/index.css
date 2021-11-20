@@ -1,5 +1,12 @@
+@font-face {
+    font-family: titulo;
+    src: url(./Vogue.ttf);
+}
+
 .formulario{
-    
+    margin-top: 20%;
+    margin-left: 20%;
+    margin-bottom: 7%;
 }
 .cardheader{
     color: #e0dbd6cb;
@@ -14,4 +21,27 @@
 }
 .cardborder{
     border-radius: 80%;
+}
+
+.iniciarses:hover {
+    background-color: #7b1634;
+    color: #fbefe1cb;
+}
+
+.inactive {
+    color: #901b3e;
+    text-decoration: none;
+}
+
+.inactive:hover{
+    color: #65132d;
+    text-decoration: none;
+}   
+
+.iniciar{
+    font-family: titulo;
+    font-size: 250%;
+    margin-top: -9%;
+    margin-bottom: 5%;
+    margin-left: 18.4%;
 }
