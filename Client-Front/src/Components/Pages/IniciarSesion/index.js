@@ -13,6 +13,7 @@ import Nav from 'react-bootstrap/Nav'
 function Registrate() {
     return (
         <Container className="formulario">
+        <h3 className="iniciar">I n i c i a r  S e s i ó n</h3>
            <Card
                 bg='#881739'
                 text='black'

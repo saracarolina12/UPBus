@@ -36,3 +36,7 @@
     background:rgb(221, 193, 157);
     color: black;
 }
+
+.images{
+    border-radius: 10% !important;
+}

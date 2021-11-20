@@ -1,9 +1,12 @@
 .imgFoot {
     width: 8%;
-    margin-left: -5%;
-    margin-bottom: -3%;
+
 }
 .textFoot{
-    margin-left: 73%;
-    margin-bottom: 3%;
+   margin-left: 80%;
 }
+
+/* .footercolor{
+    background-color: #7b1634;
+
+} */

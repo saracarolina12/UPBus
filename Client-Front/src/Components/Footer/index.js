@@ -6,9 +6,11 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 function Foot() {
     return (
-        <Container>
-            <img src={Logo} alt="Logo" className="imgFoot"/>
-            <p className="textFoot">© Universidad Panamericana Campus Bonaterra</p>
+        <Container className="footercolor">
+            <div>
+                <img src={Logo} alt="Logo" className="imgFoot"/>
+                <p className="textFoot">© Universidad Panamericana Campus Bonaterra</p>
+            </div>
         </Container>
     )
 }

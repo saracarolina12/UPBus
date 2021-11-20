@@ -14,7 +14,7 @@ const TITLE = 'Registrarse'
 function Registrate() {
     return (
         <Container className="formulario">
-            <center><h3>Registrate</h3></center>
+            <h3 className="registrar">R e g í s t r a t e</h3>
            <Card
                 bg='#881739'
                 text='black'
