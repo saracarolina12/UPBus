@@ -1,0 +1,38 @@
+.colorBoton{
+    background-color: #881739;
+    border: #881739;
+    padding: 1.5% 4%;
+    margin: 1%;
+    border-radius: 5%;
+}
+
+.centrarHome {
+    /* centrar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* paddings */
+    /* padding:8% */
+    margin:1% 0% 5% 0% /*arriba derecha abajo izquierda */
+}
+
+.tituloColumnas {
+    font-size:x-large;
+    color:rgb(221, 193, 157);
+    font-family: 'M PLUS 1', sans-serif;
+}
+
+.texto {
+    font-size: large;
+}
+
+.textoDiv {
+    margin:1% 0% 5% 0% /*arriba derecha abajo izquierda */
+}
+
+.colorBoton:hover {
+    background:rgb(221, 193, 157);
+    color: black;
+    border-color:rgb(221, 193, 157);
+}

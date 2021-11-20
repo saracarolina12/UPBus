@@ -1,6 +1,11 @@
-.formulario{
-    margin:100%;
-    
+.formulario{    
+    /* centrar */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    /* paddings */
+    padding:8%; 
 }
 .cardheader{
     color: #e0dbd6cb;
