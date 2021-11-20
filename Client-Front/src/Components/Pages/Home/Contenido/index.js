@@ -2,15 +2,6 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import './Contenido.css';
-<<<<<<< HEAD
-
-function ContenidoHome() {
-    return (
-        <div>
-            <div className="centrarHome">
-            <Button className="colorBoton" href="/PedirViaje">Pedir viaje</Button>
-            <Button className="colorBoton" href="/DarRide">Dar ride</Button>
-=======
 import Carousel from 'react-bootstrap/Carousel'
 import first_car from './1_Carrusel.jpg'
 import second_car from './2_Carrusel.jpg'
@@ -23,7 +14,6 @@ function ContenidoHome() {
             <div className="centrarHome">
             <Button className="colorBoton">Pedir viaje</Button>
             <Button className="colorBoton">Dar ride</Button>
->>>>>>> 100a576b52fcb5d9d93e56b603c16ebb0504c8e6
             </div>
 
             <div className ="textoDiv">
@@ -56,11 +46,7 @@ function ContenidoHome() {
                 </Col> 
             </Row>
             </div>
-<<<<<<< HEAD
-        </div>
-=======
       </div> 
->>>>>>> 100a576b52fcb5d9d93e56b603c16ebb0504c8e6
     )
 }
 
