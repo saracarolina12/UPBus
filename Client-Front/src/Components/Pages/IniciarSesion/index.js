@@ -42,7 +42,7 @@ function IniciarSesion() {
                             </Col>
                         </Form.Group>
                         <center>   
-                            <Nav.Link componentClass={Link} href="/Olvidemicontraseña" to="/Olvidemicontraseña">¿Olvidaste tu contraseña?</Nav.Link>
+                            <Nav.Link className="inactive" componentClass={Link} href="/Olvidemicontraseña" to="/Olvidemicontraseña">¿Olvidaste tu contraseña?</Nav.Link>
                             <Button className="iniciarses">Iniciar Sesión</Button>
                         </center>
                     </Form>

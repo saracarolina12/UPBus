@@ -19,3 +19,13 @@
     background-color: #7b1634;
     color: #fbefe1cb;
 }
+
+.inactive {
+    color: #901b3e;
+    text-decoration: none;
+}
+
+.inactive:hover{
+    color: #65132d;
+    text-decoration: none;
+}   
