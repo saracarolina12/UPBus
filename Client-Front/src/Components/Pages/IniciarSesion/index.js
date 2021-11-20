@@ -7,11 +7,10 @@ import Col from "react-bootstrap/esm/Col";
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
-import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
 
-function IniciarSesion() {
+function Registrate() {
     return (
         <Container className="formulario">
            <Card
@@ -54,5 +53,5 @@ function IniciarSesion() {
         </Container>
     )
 }
-export default IniciarSesion;
+export default Registrate;
 //https://medium.com/@ethantcollins98/making-a-sometimes-fixed-navbar-157013dfc4a5
