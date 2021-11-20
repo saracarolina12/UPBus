@@ -5,7 +5,7 @@ import IniciarSesion from "../Pages/IniciarSesion"
 import PedirViaje from "../Pages/PedirViaje"
 import Registrate from "../Pages/Registrate";
 import DarRide from "../Pages/DarRide";
-import Olvidemicontraseña from "../Pages/Olvidemiconstraseña";
+import Olvidemicontraseña from "../Pages/Olvidemicontraseña";
 
 const Rutas = () => {
     return (
