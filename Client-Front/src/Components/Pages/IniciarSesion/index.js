@@ -8,9 +8,20 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav'
-
+import React from "react"
 
 function Registrate() {
+    const [state, setState] = React.useState();
+    function Changing(x){
+        const {value} = x.target;   //valor a guardar en la base de datos
+        if(!isNaN(value)){
+            console.log(value);
+            setState(value);
+        }else{
+            alert("No es un número");
+        }       
+    }
+
     return (
         <Container className="formulario">
         <h3 className="iniciar">I n i c i a r  S e s i ó n</h3>
@@ -29,7 +40,7 @@ function Registrate() {
                             ID
                             </Form.Label>
                             <Col sm="10">
-                            <Form.Control  placeholder="Introduce tu ID" />
+                            <Form.Control onChange={Changing} placeholder="Introduce tu ID" />
                             </Col>
                         </Form.Group>
 
