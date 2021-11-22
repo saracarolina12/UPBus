@@ -49,8 +49,6 @@ function Registrate() {
                 </Card.Text>
                 </Card.Body>
             </Card>
-
-
         </Container>
     )
 }
