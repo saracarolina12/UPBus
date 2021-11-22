@@ -31,7 +31,7 @@ function Registrate() {
                 style={{ width: '60%'}}
                 className="cardborder"
             >
-                <Card.Header className="cardheader"><center><h4>Para continuar, introduce tu usuario...</h4></center></Card.Header>
+                <Card.Header className="cardheader"><center><h4>Para continuar, introduce tu ID</h4></center></Card.Header>
                 <Card.Body className="cardbody">
                 <Card.Text>
                    <Form>
