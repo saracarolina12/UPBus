@@ -17,7 +17,7 @@ function Registrate() {
            <Card
                 bg='#881739'
                 text='black'
-                style={{ width: '50%'}}
+                style={{ width: '60%'}}
                 className="cardborder"
             >
                 <Card.Header className="cardheader"><center><h4>Para continuar, introduce tu usuario...</h4></center></Card.Header>
