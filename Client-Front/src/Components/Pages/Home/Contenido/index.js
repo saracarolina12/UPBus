@@ -2,16 +2,19 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import './Contenido.css';
-import Carousel from 'react-bootstrap/Carousel'
+import { Link } from 'react-router-dom'
+// import { Button } from 'semantic-ui-react'
 
-
-const Time = 2500;
 function ContenidoHome() {
     return (      
         <div>
             <div className="centrarHome">
-            <Button className="colorBoton">Pedir viaje</Button>
-            <Button className="colorBoton">Dar ride</Button>
+            <Link to="/PedirViaje">
+                <Button className="btn colorBoton">Pedir viaje</Button>
+            </Link>
+            <Link to="/PedirViaje">
+                <Button className="colorBoton">Dar ride</Button>
+            </Link>
             </div>
 
             <div className ="textoDiv">
