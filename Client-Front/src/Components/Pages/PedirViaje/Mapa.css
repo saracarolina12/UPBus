@@ -1,0 +1,34 @@
+.formulario {
+  margin-top: 20%;
+  margin-left: 20%;
+  margin-bottom: 7%;
+}
+.cardheader {
+  color: #e0dbd6cb;
+  background-color: #881739;
+}
+.cardbody {
+  background-color: #f5e6db;
+}
+.iniciarses {
+  background-color: #881739;
+  border: #881739;
+}
+.cardborder {
+  border-radius: 80%;
+}
+
+.iniciarses:hover {
+  background-color: #7b1634;
+  color: #fbefe1cb;
+}
+
+.inactive {
+  color: #901b3e;
+  text-decoration: none;
+}
+
+.inactive:hover {
+  color: #65132d;
+  text-decoration: none;
+}

@@ -1,0 +1,20 @@
+.leaflet-container {
+  width: 30vm;
+  height: 50vh;
+  margin-top: 1%;
+  margin-left: 20%;
+  margin-right: 28%;
+  margin-bottom: 7%;
+}
+.imgIcono {
+  width: 3%;
+  height: 3%;
+}
+.letra {
+  font-size: 300%;
+  font-family: Vogue;
+  margin-bottom: 0%;
+  margin-top: 4%;
+  margin-left: 24%;
+  color: brown;
+}
