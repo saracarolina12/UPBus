@@ -2,19 +2,18 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import './Contenido.css';
-import { Link } from 'react-router-dom'
-// import { Button } from 'semantic-ui-react'
+import Carousel from 'react-bootstrap/Carousel'
+import first_car from './1_Carrusel.jpg'
+import second_car from './2_Carrusel.jpg'
+import third_car from './3_Carrusel.jpeg'
 
+const Time = 2500;
 function ContenidoHome() {
     return (      
         <div>
             <div className="centrarHome">
-            <Link to="/PedirViaje">
-                <Button className="btn colorBoton">Pedir viaje</Button>
-            </Link>
-            <Link to="/PedirViaje">
-                <Button className="colorBoton">Dar ride</Button>
-            </Link>
+            <Button className="colorBoton" href="/PedirViaje">Pedir viaje</Button>
+            <Button className="colorBoton" href="/DarRide">Dar ride</Button>
             </div>
 
             <div className ="textoDiv">

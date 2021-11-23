@@ -1,14 +1,12 @@
 .imgFoot {
-    width: 8%;
-    margin-left: -5%;
-    margin-bottom: -3%;
+    width: 13%;
 }
-.textFoot{
-    margin-left: 73%;
-    margin-bottom: 3%;
-} 
 
+.pegarDerecha {
+    display: flex;
+    align-items: flex-end;
+    justify-content: right;
+}
 /* .footercolor{
-    background-color: #7b1634;
-
-} */
+    background-color: white
+}  */

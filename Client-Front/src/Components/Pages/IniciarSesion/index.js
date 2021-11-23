@@ -8,30 +8,19 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav'
-import React from "react"
 
-function Registrate() {
-    const [state, setState] = React.useState();
-    function Changing(x){
-        const {value} = x.target;   //valor a guardar en la base de datos
-        if(!isNaN(value)){
-            console.log(value);
-            setState(value);
-        }else{
-            alert("No es un número");
-        }       
-    }
 
+function IniciarSesion() {
     return (
         <Container className="formulario">
-        <h3 className="iniciar">I n i c i a r  S e s i ó n</h3>
+        <h3 className="iniciar">I n i c i a r S e s i ó n</h3>
            <Card
                 bg='#881739'
                 text='black'
-                style={{ width: '60%'}}
+                style={{ width: '50%'}}
                 className="cardborder"
             >
-                <Card.Header className="cardheader"><center><h4>Para continuar, introduce tu ID</h4></center></Card.Header>
+                <Card.Header className="cardheader"><center><h4>Para continuar, introduce tu usuario...</h4></center></Card.Header>
                 <Card.Body className="cardbody">
                 <Card.Text>
                    <Form>
@@ -40,7 +29,7 @@ function Registrate() {
                             ID
                             </Form.Label>
                             <Col sm="10">
-                            <Form.Control onChange={Changing} placeholder="Introduce tu ID" />
+                            <Form.Control  placeholder="Introduce tu ID" />
                             </Col>
                         </Form.Group>
 
@@ -60,8 +49,10 @@ function Registrate() {
                 </Card.Text>
                 </Card.Body>
             </Card>
+
+
         </Container>
     )
 }
-export default Registrate;
+export default IniciarSesion;
 //https://medium.com/@ethantcollins98/making-a-sometimes-fixed-navbar-157013dfc4a5

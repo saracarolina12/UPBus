@@ -13,11 +13,10 @@
     flex-direction: column;
 
     /* paddings */
-    padding:8% 8% 3% 8%;
 }
 .imgTitulo {
-    height: 70vh;
-    border-radius: 8%;
+    width: 100%;
+    border-radius: 5%;
 }
 .UpBus{
     font-size: 400%;

@@ -9,17 +9,17 @@ import { Link } from "react-router-dom";
 
 function Navb() {
     return (
-    <Navbar fixed="top" collapseOnSelect expand="lg" variant="dark" className="colorNavb">
+    <Navbar sticky="top" collapseOnSelect expand="lg" variant="dark" className="colorNavb">
     <Container>
     <Navbar.Brand componentClass={Link} href="/" to="/"><img img src={logo} alt="Logo" className="imgNavb"/></Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-            <Nav.Link className="pedirviaje" componentClass={Link} href="/PedirViaje" to="/PedirViaje">Pedir viaje</Nav.Link>
+            <Nav.Link componentClass={Link} href="/PedirViaje" to="/PedirViaje">Pedir viaje</Nav.Link>
             <Nav.Link componentClass={Link} href="/DarRide" to="/DarRide">Dar ride</Nav.Link>
         </Nav>
         <Nav>
-            <Nav.Link className="pedirviaje" componentClass={Link} href="/IniciarSesion" to="/IniciarSesion">Iniciar Sesion</Nav.Link>
+            <Nav.Link componentClass={Link} href="/IniciarSesion" to="/IniciarSesion">Iniciar Sesión</Nav.Link>
             <Nav.Link componentClass={Link} href="/Registrate" to="/Registrate" eventKey={2} >Regístrate</Nav.Link>
         </Nav>
     </Navbar.Collapse>

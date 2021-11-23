@@ -7,7 +7,7 @@ import Rutas from './Components/Rutas/index.js';
 function App() {
   return (
     <>
-    <Navb />
+    {/* <Navb /> */}
     <Rutas />
     <Foot />
     </>

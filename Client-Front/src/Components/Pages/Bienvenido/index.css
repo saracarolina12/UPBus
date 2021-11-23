@@ -1,0 +1,25 @@
+.cuadroexterior {
+    width: 50rem;
+    height: 30rem;
+    background: #881739;
+    border-radius: 10%;
+    padding: 10%;
+}
+
+.cuadrointerior {
+    width: 50rem;
+    height: 30rem;
+    background: #ebdbc8;
+    border-radius: 10%;
+    padding: 10%;
+}
+
+.continuar{
+    background-color: #881739;
+    border: #881739;
+}
+
+.continuar:hover {
+    background-color: #7b1634;
+    color: #fbefe1cb;
+}
