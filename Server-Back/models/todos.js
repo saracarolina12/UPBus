@@ -3,11 +3,18 @@ const Schema = mongoose.Schema;
 
 const todoSchema = new Schema(
     {
-        title: {
+        ID: {
+            type: Number,
+            required: true
+        },
+        password:{
             type: String,
             required: true
         },
-        content: String
+        Location: {
+            type: String,
+            // required: true,
+        }
     },  
     {timestamps: true}
 );

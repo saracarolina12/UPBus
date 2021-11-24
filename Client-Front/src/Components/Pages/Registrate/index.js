@@ -25,10 +25,10 @@ function Registrate() {
                    <Form>
                         <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
                             <Form.Label column sm="2">
-                            Correo
+                            ID
                             </Form.Label>
                             <Col sm="10">
-                            <Form.Control  placeholder="Introduce tu correo institucional" />
+                            <Form.Control  placeholder="Introduce tu ID" />
                             </Col>
                         </Form.Group>
 
@@ -40,9 +40,17 @@ function Registrate() {
                             <Form.Control type="password" placeholder="Ingresa tu contraseña" />
                             </Col>
                         </Form.Group>
+                        <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+                            <Form.Label column sm="2">
+                            Confirma tu contraseña
+                            </Form.Label>
+                            <Col sm="10">
+                            <Form.Control type="password" placeholder="Ingresa nuevamente tu contraseña" />
+                            </Col>
+                        </Form.Group>
                         <center>   
-                            <Nav.Link className="inactive" componentClass={Link} href="/Olvidemicontraseña" to="/Olvidemicontraseña">¿Olvidaste tu contraseña?</Nav.Link>
-                            <Button className="iniciarses">Iniciar Sesión</Button>
+                            {/* <Nav.Link className="inactive" componentClass={Link} href="/Olvidemicontraseña" to="/Olvidemicontraseña">¿Olvidaste tu contraseña?</Nav.Link> */}
+                            <Button className="iniciarses">Registrar</Button>
                         </center>
                     </Form>
                 </Card.Text>
