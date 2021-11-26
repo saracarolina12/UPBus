@@ -8,7 +8,7 @@ function DarRide() {
     return (
         <Container className="DarRide">
            <br/>
-           <h3 className="titulo">Selecciona la ubicacion por la que puedes pasar</h3>
+           <h3 className="titulo">Selecciona la ubicación por la que puedes pasar</h3>
            <Card style={{ width: '50%' }}>
            <Card.Header className="cardheader"><center><h5>Id de usuario</h5></center></Card.Header>        
             <Card.Body className="cardbody">

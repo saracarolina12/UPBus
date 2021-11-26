@@ -11,9 +11,9 @@ export const getUser = async() => {
     }
 }
 
-export const createUser = async({title, content}) => {
+export const createUser = async({ID, password}) => {
     try {
-        const {data} = await api.createUser({title, content});
+        const {data} = await api.createUser({ID, password});
         return data;
     }
     catch(error) {

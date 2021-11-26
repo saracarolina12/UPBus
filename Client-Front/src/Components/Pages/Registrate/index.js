@@ -12,7 +12,51 @@ import { getUser } from '../../../Functions';
 import React from 'react';
 
 function Registrate() {
-    
+     const [id, setid] = useState();
+     const [passw, setpassw] = useState();
+     const [conf, setConf] = useState();
+     const [state, setState] = useState();
+
+    //OCchange
+     const IDchange = (x) =>{  //cambios ID
+        const {value} = x.target;
+        console.log(value);
+        setid(value);
+     }
+     const PasswChange = (x) =>{
+         const {value} = x.target;
+         console.log(value);
+         setpassw(value);
+     }
+     const ConfChange = (x) =>{
+        const {value} = x.target;
+        console.log(value);
+        setConf(value);
+    }
+
+    //Create
+    const onSubmitHandler = async () => {
+        if(passw && id && conf){
+            if(passw === conf){ //si las contraseñas coinciden, añadimos el usuario
+                await createUser({ID: id, password: passw})
+            }
+            else{
+                alert(`¡Las contraseñas no coinciden!\nIntenta de nuevo.`)
+            }
+        }else{
+            alert(`¡Campo vacío!\nIntenta de nuevo.`)
+        }
+    };
+
+    useEffect(() => {
+        // console.log("Todos");
+        const fetchData = async() => {
+            const result = await getUser();
+            setState(result);                       //guardo el fetch
+            // console.log('Fetched data', result);
+        };
+        fetchData();
+    }, [state]);
     return (
         <Container className="centrar">
             <br/>
@@ -33,7 +77,7 @@ function Registrate() {
                             ID
                             </Form.Label>
                             <Col sm="10">
-                            <Form.Control  placeholder="Introduce tu ID" />
+                            <Form.Control onChange={IDchange} placeholder="Introduce tu ID" />
                             </Col>
                         </Form.Group>
 
@@ -42,7 +86,7 @@ function Registrate() {
                             Contraseña
                             </Form.Label>
                             <Col sm="10">
-                            <Form.Control type="password" placeholder="Ingresa tu contraseña" />
+                            <Form.Control onChange={PasswChange} type="password" placeholder="Ingresa tu contraseña" />
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
@@ -50,12 +94,12 @@ function Registrate() {
                             Confirma tu contraseña
                             </Form.Label>
                             <Col sm="10">
-                            <Form.Control type="password" placeholder="Ingresa nuevamente tu contraseña" />
+                            <Form.Control onChange={ConfChange} type="password" placeholder="Ingresa nuevamente tu contraseña" />
                             </Col>
                         </Form.Group>
                         <center>   
                             {/* <Nav.Link className="inactive" componentClass={Link} href="/Olvidemicontraseña" to="/Olvidemicontraseña">¿Olvidaste tu contraseña?</Nav.Link> */}
-                            <Button className="iniciarses">Registrar</Button>
+                            <Button onClick={onSubmitHandler} className="iniciarses">Registrar</Button>
                         </center>
                     </Form>
                 </Card.Text>

@@ -8,9 +8,28 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav'
+import { createUser } from '../../../Api/index.js';
+import { useEffect, useState } from 'react';
+import { getUser } from '../../../Functions';
+import React from 'react';
 
 
 function IniciarSesion() {
+    const [id, setid] = useState();
+    const [passw, setpassw] = useState();
+    const [state, setState] = useState();
+
+   //OCchange
+    const IDchange = (x) =>{  //cambios ID
+       const {value} = x.target;
+       console.log(value);
+       setid(value);
+    }
+    const PasswChange = (x) =>{
+        const {value} = x.target;
+        console.log(value);
+        setpassw(value);
+    }
     return (
         <Container className="centrar">
         <br/>
@@ -31,7 +50,7 @@ function IniciarSesion() {
                             ID
                             </Form.Label>
                             <Col sm="10">
-                            <Form.Control  placeholder="Introduce tu ID" />
+                            <Form.Control onChange={IDchange} placeholder="Introduce tu ID" />
                             </Col>
                         </Form.Group>
 
@@ -40,7 +59,7 @@ function IniciarSesion() {
                             Contraseña
                             </Form.Label>
                             <Col sm="10">
-                            <Form.Control type="password" placeholder="Ingresa tu contraseña" />
+                            <Form.Control onChange={PasswChange} type="password" placeholder="Ingresa tu contraseña" />
                             </Col>
                         </Form.Group>
                         <center>   
@@ -51,7 +70,6 @@ function IniciarSesion() {
                 </Card.Text>
                 </Card.Body>
             </Card>
-
 
         </Container>
     )

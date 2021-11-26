@@ -19,3 +19,12 @@ export const createUser = async(req, res) => {
         res.status(400).json({message: error.message});
     }
 };
+
+// export const deleteTodos = async(req, res) => {
+//     const {id} = req.params;
+//     if (!mongoose.Types.ObjectId.isValid(id))
+//         return res.status(404).send("This id doesn't exist")
+    
+//     await Todo.findByIdAndRemove(id);
+//         res.status(200).json({message : "Todo deleted successfully"})
+// };
