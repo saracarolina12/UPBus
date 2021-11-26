@@ -1,4 +1,4 @@
-import './PedirViaje.css';
+import '../Formulario.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Container from "react-bootstrap/esm/Container";
 import Form from 'react-bootstrap/Form'
@@ -15,7 +15,7 @@ function PedirViaje() {
 
         <Container className="centrar">
         <br/>
-        <h3 className="iniciar">Pedir viaje</h3>
+        <h3 className="letraTitulo">Pedir viaje</h3>
         <br/>
            <Card
                 bg='#881739'

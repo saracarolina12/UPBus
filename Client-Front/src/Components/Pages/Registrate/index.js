@@ -1,4 +1,4 @@
-import './index.css';
+import '../Formulario.css'
 import "bootstrap/dist/css/bootstrap.min.css"
 import Container from "react-bootstrap/esm/Container";
 import Form from 'react-bootstrap/Form'
@@ -12,7 +12,7 @@ function Registrate() {
     return (
         <Container className="centrar">
             <br/>
-            <h3 className="registrar">Regístrate</h3>
+            <h3 className="letraTitulo">Regístrate</h3>
             <br/>
            <Card
                 bg='#881739'
