@@ -8,8 +8,14 @@ function App() {
   return (
     <>
     {/* <Navb /> */}
+    <div className="Foot1">
+    <div className="Foot2">
+
     <Rutas />
+    </div>
+
     <Foot />
+    </div>
     </>
   );
 }

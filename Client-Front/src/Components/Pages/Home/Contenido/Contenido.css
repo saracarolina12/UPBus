@@ -18,10 +18,11 @@
 }
 
 .tituloColumnas {
-    font-weight:600;
+    font-weight: lighter;
     font-size:x-large;
     color:rgb(162, 135, 100);
-    font-family: 'M PLUS 1', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
+
 }
 
 .texto {

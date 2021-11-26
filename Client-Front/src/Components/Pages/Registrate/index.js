@@ -6,13 +6,14 @@ import Row from 'react-bootstrap/Row'
 import Col from "react-bootstrap/esm/Col";
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav'
+
 
 function Registrate() {
     return (
-        <Container className="formulario">
-            <h3 className="registrar">R e g í s t r a t e</h3>
+        <Container className="centrar">
+            <br/>
+            <h3 className="registrar">Regístrate</h3>
+            <br/>
            <Card
                 bg='#881739'
                 text='black'

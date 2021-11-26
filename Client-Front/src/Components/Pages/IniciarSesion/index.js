@@ -12,8 +12,10 @@ import Nav from 'react-bootstrap/Nav'
 
 function IniciarSesion() {
     return (
-        <Container className="formulario">
-        <h3 className="iniciar">I n i c i a r S e s i ó n</h3>
+        <Container className="centrar">
+        <br/>
+        <h3 className="iniciar">Iniciar sesión</h3>
+        <br/>
            <Card
                 bg='#881739'
                 text='black'

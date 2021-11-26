@@ -19,7 +19,7 @@ function Navb() {
             <Nav.Link componentClass={Link} href="/DarRide" to="/DarRide">Dar ride</Nav.Link>
         </Nav>
         <Nav>
-            <Nav.Link componentClass={Link} href="/IniciarSesion" to="/IniciarSesion">Iniciar Sesión</Nav.Link>
+            <Nav.Link componentClass={Link} href="/IniciarSesion" to="/IniciarSesion">Iniciar sesión</Nav.Link>
             <Nav.Link componentClass={Link} href="/Registrate" to="/Registrate" eventKey={2} >Regístrate</Nav.Link>
         </Nav>
     </Navbar.Collapse>

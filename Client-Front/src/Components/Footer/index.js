@@ -10,7 +10,7 @@ function Foot() {
     return (
         
 
-        <Container  className="footercolor">
+        <Container  fluid className="footercolor">
             <Row>
                 <Col><img src={Logo} alt="Logo" className="imgFoot"/></Col>
                 <Col className="pegarDerecha"><p className="textFoot">© Universidad Panamericana Campus Bonaterra</p></Col>

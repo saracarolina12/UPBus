@@ -37,15 +37,12 @@ const Mapa = () =>{
 const position = [21.8240054, -102.2848179]
     return (
     <Container>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
         {/* <h1>Geolocation</h1>
         <p>Longitude: {state.longitude}</p>
         <p>Latitude: {state.latitude}</p> */}
-        <h1 className="letra">Ingrese su localización actual</h1>
+        <br/>
+        <h1 className="letra centrar">Ingrese su localización actual</h1>
+        <br/>
         {/* <Link to={{
             pathname: '/map',
             state

@@ -2,12 +2,8 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import './Contenido.css';
-import Carousel from 'react-bootstrap/Carousel'
-import first_car from './1_Carrusel.jpg'
-import second_car from './2_Carrusel.jpg'
-import third_car from './3_Carrusel.jpeg'
 
-const Time = 2500;
+
 function ContenidoHome() {
     return (      
         <div>
@@ -28,7 +24,7 @@ function ContenidoHome() {
                     </p>
                 </Col>
                 <Col>
-                    <p className="tituloColumnas">Recibe horas de servicio social</p>
+                    <p className="tituloColumnas">Servicio social</p>
                     <p className="texto">
                         Al seleccionar ser conductor, habrá un contador de horas que te ayuda a completar
                         tu servicio social.

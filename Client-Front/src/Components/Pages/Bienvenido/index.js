@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button'
 
 function Bienvenido() {
     return (
-        <Container className="formulario">
+        <Container className="centrar">
             <div class="cuadroexterior">
                 <div class="cuadrointerior">
                     <h3>¡Bienvenido {}!</h3>

@@ -1,3 +1,8 @@
+.centrar {
+display: flex;
+justify-content: center;
+align-items: center;
+}
 .leaflet-container {
   width: 30vm;
   height: 50vh;
@@ -11,10 +16,8 @@
   height: 3%;
 }
 .letra {
-  font-size: 300%;
-  font-family: Vogue;
-  margin-bottom: 0%;
-  margin-top: 4%;
-  margin-left: 24%;
-  color: brown;
+  font-size: 250%;
+  font-family: 'Be Vietnam Pro', sans-serif;;
+  color: #881739;  
+  letter-spacing: 10px;
 }

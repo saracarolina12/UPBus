@@ -1,4 +1,4 @@
-import './Mapa.css';
+import './PedirViaje.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Container from "react-bootstrap/esm/Container";
 import Form from 'react-bootstrap/Form'
@@ -12,7 +12,11 @@ import Nav from 'react-bootstrap/Nav'
 
 function PedirViaje() {
     return (
-        <Container className="formulario">
+
+        <Container className="centrar">
+        <br/>
+        <h3 className="iniciar">Pedir viaje</h3>
+        <br/>
            <Card
                 bg='#881739'
                 text='black'
@@ -28,7 +32,7 @@ function PedirViaje() {
                             Ubicación: 
                             </Form.Label>
                             <Col sm="10">
-                            <Form.Control  placeholder="Ej: Villas Bonaterra coto 2, calle llano alto #307" />
+                            <Form.Control  placeholder="Ej: Villas Bonaterra, coto 2, calle Llano alto #307" />
                             </Col>
                         </Form.Group>
                         <center>   
