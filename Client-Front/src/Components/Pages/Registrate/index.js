@@ -6,9 +6,13 @@ import Row from 'react-bootstrap/Row'
 import Col from "react-bootstrap/esm/Col";
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-
+import { createUser } from '../../../Api/index.js';
+import { useEffect, useState } from 'react';
+import { getUser } from '../../../Functions';
+import React from 'react';
 
 function Registrate() {
+    
     return (
         <Container className="centrar">
             <br/>

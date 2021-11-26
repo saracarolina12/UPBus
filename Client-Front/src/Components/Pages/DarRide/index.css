@@ -1,3 +1,30 @@
 .titulo{
     text-align: center;
 }
+
+.DarRide{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardheader {
+    color: #e0dbd6cb;
+    background-color: #881739;
+}
+
+.cardbody {
+    background-color: #f5e6db;
+}
+
+.buttonbg{
+    color: #e0dbd6cb;
+    background-color: #881739;
+    border: #881739;
+
+}
+
+.buttonbg:hover{
+    background-color: #7b1634;
+    color: #fbefe1cb;
+}

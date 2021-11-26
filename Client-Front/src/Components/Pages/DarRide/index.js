@@ -9,11 +9,11 @@ function DarRide() {
         <Container className="DarRide">
            <br/>
            <h3 className="titulo">Selecciona la ubicacion por la que puedes pasar</h3>
-           <Card style={{ width: '50%' }}>            
-            <Card.Body>
-            <Card.Title>Id de usuario</Card.Title>
+           <Card style={{ width: '50%' }}>
+           <Card.Header className="cardheader"><center><h5>Id de usuario</h5></center></Card.Header>        
+            <Card.Body className="cardbody">
             <Card.Text>Ubicación</Card.Text>
-            <Button variant="primary">Aceptar viaje</Button>
+            <Button variant="primary" className="buttonbg">Aceptar viaje</Button>
             </Card.Body>
             </Card>
         </Container>

@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
-import todoRoutes from "./routes/todos.js"
+import userRoutes from "./routes/user.js"
 
 const app = express();
 dotenv.config();
@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
     res.send("<p>Servidor corriendo...</p>")
 });
 
-app.use("/todos", todoRoutes);
+app.use("/user", userRoutes);
 
 mongoose
   .connect(MONGO_URL, {
