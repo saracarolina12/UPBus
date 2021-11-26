@@ -30,6 +30,18 @@ function IniciarSesion() {
         console.log(value);
         setpassw(value);
     }
+
+    const onSubmitHandler = async () => {
+        if(id && passw){
+            if(!isNaN(id)){
+                
+            }else{
+                alert(`Tu ID debe estar compuesto únicamente por números\nIntenta de nuevo.`)
+            }
+        }else{
+            alert(`¡Campo vacío!\nIntenta de nuevo.`)    
+        }
+    }
     return (
         <Container className="centrar">
         <br/>
@@ -64,7 +76,7 @@ function IniciarSesion() {
                         </Form.Group>
                         <center>   
                             <Nav.Link className="inactive" componentClass={Link} href="/Olvidemicontraseña" to="/Olvidemicontraseña">¿Olvidaste tu contraseña?</Nav.Link>
-                            <Button className="iniciarses">Iniciar Sesión</Button>
+                            <Button onClick={onSubmitHandler} className="iniciarses">Iniciar Sesión</Button>
                         </center>
                     </Form>
                 </Card.Text>
