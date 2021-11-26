@@ -10,6 +10,7 @@ import { createUser } from '../../../Api/index.js';
 import { useEffect, useState } from 'react';
 import { getUser } from '../../../Functions';
 import React from 'react';
+import Swal from 'sweetalert2'
 
 function Registrate() {
      const [id, setid] = useState();
@@ -37,11 +38,23 @@ function Registrate() {
     //Create
     const onSubmitHandler = async () => {
         if(passw && id && conf){
-            if(passw === conf){ //si las contraseñas coinciden, añadimos el usuario
-                await createUser({ID: id, password: passw})
-            }
-            else{
-                alert(`¡Las contraseñas no coinciden!\nIntenta de nuevo.`)
+            if(!isNaN(id)){
+                if(passw === conf){ //si las contraseñas coinciden, añadimos el
+                    await createUser({ID: id, password: passw})
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        width: 650,
+                        title: 'Tu usuario se ha creado correctamente',
+                        showConfirmButton: false,
+                        timer: 2500
+                      })
+                }
+                else{
+                    alert(`¡Las contraseñas no coinciden!\nIntenta de nuevo.`)
+                }
+            }else{
+                alert(`Tu ID debe estar compuesto únicamente por números\nIntenta de nuevo.`)
             }
         }else{
             alert(`¡Campo vacío!\nIntenta de nuevo.`)
@@ -53,7 +66,7 @@ function Registrate() {
         const fetchData = async() => {
             const result = await getUser();
             setState(result);                       //guardo el fetch
-            // console.log('Fetched data', result);
+            console.log('Fetched data', result);
         };
         fetchData();
     }, [state]);
