@@ -2,10 +2,20 @@ import React from "react"
 import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Container from "react-bootstrap/esm/Container";
+import Card from "react-bootstrap/esm/Card";
+import Button from "react-bootstrap/esm/Button";
 function DarRide() {
     return (
         <Container className="DarRide">
-           <h3>Dar Ride</h3>
+           <br/>
+           <h3 className="titulo">Selecciona la ubicacion por la que puedes pasar</h3>
+           <Card style={{ width: '50%' }}>            
+            <Card.Body>
+            <Card.Title>Id de usuario</Card.Title>
+            <Card.Text>Ubicación</Card.Text>
+            <Button variant="primary">Aceptar viaje</Button>
+            </Card.Body>
+            </Card>
         </Container>
     )
 }
