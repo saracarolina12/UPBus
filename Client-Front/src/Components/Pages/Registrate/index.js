@@ -41,14 +41,22 @@ function Registrate() {
             if(!isNaN(id)){
                 if(passw === conf){ //si las contraseñas coinciden, añadimos el
                     await createUser({ID: id, password: passw})
+                    let timerInterval
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        width: 650,
-                        title: 'Tu usuario se ha creado correctamente',
-                        showConfirmButton: false,
-                        timer: 2500
-                      })
+                        title: '¡Tu usuario ha sido registrado correctamente!',
+                        timer: 650,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading()
+                        },
+                        willClose: () => {  
+                            clearInterval(timerInterval)
+                        }
+                    }).then(function() {
+                        window.location = "/IniciarSesion";
+                    });
                 }
                 else{
                     alert(`¡Las contraseñas no coinciden!\nIntenta de nuevo.`)
