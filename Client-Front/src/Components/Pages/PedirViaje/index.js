@@ -71,8 +71,6 @@ function PedirViaje() {
                 </Card.Text>
                 </Card.Body>
             </Card>
-
-
         </Container>
     )
 }
