@@ -24,18 +24,18 @@ function Olvidemicontraseña() {
        setCorreo(value);
     }
    
-    const onSubmitHandler = async () => {
+    const onSubmitHandler = async (x) => {
         if(correo){
             if(correo.substring(8,correo.length) != 'up.edu.mx'){       //verifica que sea correo institucional
                 alert('Ingresa un correo institucional.\nIntenta nuevamente.')
             }else{
-
+                x.preventDefault();
                 var abc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", codigo = "", y = abc.length
                 for (var i=1; i<8; i++)
                 codigo += abc[Math.floor(Math.random()*y)];
                 console.log(codigo)
     
-              
+               
             }
         }else{
             alert('Ingresa un correo.')

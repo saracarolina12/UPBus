@@ -1,4 +1,4 @@
-import './PedirViaje.css';
+import '../Formulario.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Container from "react-bootstrap/esm/Container";
 import Form from 'react-bootstrap/Form'
@@ -7,14 +7,35 @@ import Col from "react-bootstrap/esm/Col";
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav'
+import { useState, useEffect } from 'react';
+import { getUser, updateUser} from '../../../Functions'
+
 
 
 function PedirViaje() {
+    const [user, setUser] = useState();
+    const [location, setLocation] = useState('');
+
+    const updateUser = async (Location) => {
+        await updateUser(Location);
+    }
+
+    useEffect(() => {
+        //console.log('todos');
+        const fetchData = async() => {
+        const result = await getUser();
+        //console.log('ferched Data', result)
+        setUser(result)
+        };
+        fetchData();
+    }, []); //esto se corre la priemra vez que cargas la pagina porque esta vacio
+                //si esta vacio no se recargara automaticamente
+
     return (
 
         <Container className="centrar">
         <br/>
-        <h3 className="iniciar">Pedir viaje</h3>
+        <h3 className="letraTitulo">Pedir viaje</h3>
         <br/>
            <Card
                 bg='#881739'
@@ -31,11 +52,20 @@ function PedirViaje() {
                             Ubicación: 
                             </Form.Label>
                             <Col sm="10">
-                            <Form.Control  placeholder="Ej: Villas Bonaterra, coto 2, calle Llano alto #307" />
+                            <Form.Control  placeholder="Ej: Villas Bonaterra, coto 2, calle Llano alto #307" 
+                            onChange={(event) => {
+                                setLocation(event.target.value);
+                            }}/>
                             </Col>
                         </Form.Group>
                         <center>   
-                            <Nav.Link className="inactive" componentClass={Link} href="/Mapa" to="/Mapa">Ingresar ubiación actual</Nav.Link>
+                            <Nav.Link 
+                                className="inactive"
+                                componentClass={Link} 
+                                href="/Mapa" 
+                                to="/Mapa"
+                                onClick={()=> updateUser(Location)}
+                                >Ingresar ubiación actual</Nav.Link>
                         </center>
                     </Form>
                 </Card.Text>

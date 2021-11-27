@@ -16,3 +16,11 @@
         npm i
     3. Correr proyecto:
         npm start 
+
+    Para ver cómo se añaden usuarios al registrarse:
+        Cuenta MongoDB (cuenta gmail): 
+            -usuario: upbusags@gmail.com
+            -contraseña: upbus123!
+
+        -Ingresar a la sección: 
+           Atlas -> Databases -> myFirstDataBase -> users

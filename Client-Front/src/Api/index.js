@@ -11,3 +11,5 @@ export const SearchUser = (IDtosearch) =>{
 }     
 // export const deleteUser = (id) => axios.delete(`${url}/${id}`); 
 
+export const updateUser = (Location) => axios.put(url, {Location:Location});
+

@@ -30,6 +30,16 @@ export const SearchUser = async(ID)=>{
     }
 }
 
+export const updateUser = async({Location}) => {
+    try {
+        await api.updateUser(Location)
+        return `${Location} updated successfully`;
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
+
 // export const deleteUser = async(id) => {
 //     try {
 //         await api.deleteUser(id);

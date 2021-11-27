@@ -20,16 +20,15 @@ function ContenidoHome() {
                         Este proyecto esta pensado para ayudar a reducir las emisiones de carbono de nuestra ciudad 
                         y ayudar a todo aquel alumno de la UP que necesite ride.
                         <br/> <br/>
-                        Al participar, apoyas a salvar nuestro planeta
+                        Al participar, apoyas a salvar nuestro planeta usando menos coches.
                     </p>
                 </Col>
                 <Col>
                     <p className="tituloColumnas">Servicio social</p>
                     <p className="texto">
-                        Al seleccionar ser conductor, habrá un contador de horas que te ayuda a completar
-                        tu servicio social.
+                        Lleva a otros alumnos a la uni y obtén horas para acabar tu servicio.
                         <br/> <br/>
-                        Entre más viajes des, más horas de servicio social podrás obtener
+                        Entre más viajes des, más horas de servicio social podrás obtener.
                     </p>   
                 </Col>
                 <Col>
@@ -37,7 +36,7 @@ function ContenidoHome() {
                     <p className="texto">
                         Regístrate con tu cuenta de la UP, inicia sesión, decide si quires ser conductor(dar
                         ride) o pasajero (pedir viaje) y ¡Listo! <br/> <br/>
-                        Puedes encontrar más información en las páginas de Pedir viaje y Dar ride
+                        Puedes encontrar más información en las páginas de Pedir viaje y Dar ride.
                     </p>   
                 </Col> 
             </Row>
