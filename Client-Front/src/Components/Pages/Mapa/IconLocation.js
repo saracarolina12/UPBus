@@ -1,7 +1,7 @@
 import L from "leaflet";
 
 export const IconLocation = L.icon({
-    iconUrl: require('../Assets/Icono.svg'),
+    iconUrl: require("../Assets/Icono.svg"),
     iconRetinaUrl: require("../Assets/Icono.svg"),
     iconAnchor: null,
     shadowUrl: null,
