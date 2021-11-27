@@ -15,7 +15,6 @@ import React from 'react';
 import emailjs from 'emailjs-com'
 import Swal from 'sweetalert2';
 
-
 function Olvidemicontraseña() {
     const [correo, setCorreo] = useState();
     const [state, setState] = useState();
@@ -24,14 +23,15 @@ function Olvidemicontraseña() {
        const {value} = x.target;
        setCorreo(value);
     }
-   
+
     const onSubmitHandler = async (x) => {
         if(correo){
             if(correo.substring(8,correo.length) != 'up.edu.mx'){       //verifica que sea correo institucional
                 alert('Ingresa un correo institucional.\nIntenta nuevamente.')
             }else{
                 x.preventDefault();
-                var abc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", codigo = "", y = abc.length
+                
+                var abc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",  y = abc.length ,codigo="";
                 for (var i=1; i<8; i++)
                 codigo += abc[Math.floor(Math.random()*y)];
                 console.log(codigo)
@@ -55,11 +55,41 @@ function Olvidemicontraseña() {
                         icon: 'success',
                         width: 650,
                         title: `Se ha enviado un correo de verificación a ${correo}`,
-                        showConfirmButton: false,
-                        timer: 2500
+                        // showConfirmButton: true,
+                        timer: 2500,
+                        // confirmButtonText: '<a href="/CodigoVerif">Continuar</a>',
+                        // confirmButtonText: 'Continuar',
+                        // confirmButtonColor: '#6CBB30',
+                        preConfirm: (ok) => {
+                            Swal.fire({
+                                title: 'Ingresa tu código de verificación',
+                                input: 'text',
+                                confirmButtonText: 'Restaurar contraseña',
+                                confirmButtonColor: '#6CBB30',
+                                preConfirm: (validar) => {
+                                    if(validar == codigo){
+                                        let timerInterval
+                                            Swal.fire({
+                                            title: 'Cargando...',
+                                            timer: 1000,
+                                            timerProgressBar: true,
+                                            didOpen: () => {
+                                                Swal.showLoading()
+                                            },
+                                            willClose: () => {  
+                                                clearInterval(timerInterval)
+                                            }
+                                            }).then(function() {
+                                                window.location = "/CodigoVerif";
+                                            });
+                                    }
+                                }
+                             })
+                        }
+                        
                       })
                     console.log(res);
-                }).catch(err=>console.log(err));
+                }).catch(err=>console.log("ERRORRR:\n",err));
             }
         }else{
             alert('Ingresa un correo.')
@@ -88,9 +118,8 @@ function Olvidemicontraseña() {
                             <Form.Control name="correo" onChange={correoChange} placeholder="Introduce tu correo institucional" />
                             </Col>
                         </Form.Group>
-
                         <center>   
-                            <Button onClick={onSubmitHandler} className="iniciarses">Enviar código</Button>
+                            <Button  onClick={onSubmitHandler} className="iniciarses">Enviar código</Button>
                         </center>
                     </Form>
                 </Card.Text>
@@ -99,6 +128,8 @@ function Olvidemicontraseña() {
 
         </Container>
     )
+    
 }
 
 export default Olvidemicontraseña;
+

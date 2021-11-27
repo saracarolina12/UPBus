@@ -8,6 +8,7 @@ import DarRide from "../Pages/DarRide";
 import MapView from "../Pages/Mapa/MapView.js";
 import MapInicio from "../Pages/Mapa/MapInicio";
 import Forgot from "../Pages/Forgot"
+import CodigoVerif from "../Pages/CodigoVerif";
 
 const Rutas = () => {
     return (
@@ -22,7 +23,8 @@ const Rutas = () => {
                     <Route path="/DarRide" element = {<DarRide />} />
                     <Route path="/IniciarSesion" element = {<IniciarSesion/>} />
                     <Route path="/Registrate" element = {<Registrate/>} />
-                    <Route path="/Forgot" element={<Forgot/>} />       
+                    <Route path="/Forgot" element={<Forgot/>} />     
+                    <Route path="/CodigoVerif" element={<CodigoVerif/>} />  
                 </Routes>    
             </Router>
              
