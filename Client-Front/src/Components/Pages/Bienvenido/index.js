@@ -4,7 +4,6 @@ import Container from "react-bootstrap/esm/Container";
 import { Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav'
 import React from "react"
-import IniciarSesion from '../IniciarSesion';
 import Button from 'react-bootstrap/Button'
 
 function Bienvenido() {

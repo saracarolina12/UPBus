@@ -14,44 +14,37 @@ import { getUser } from '../../../Functions';
 import React from 'react';
 
 
-function IniciarSesion() {
-    const [id, setid] = useState();
-    const [passw, setpassw] = useState();
+function Olvidemicontraseña() {
+    const [correo, setCorreo] = useState();
     const [state, setState] = useState();
-
-   //OCchange
-    const IDchange = (x) =>{  //cambios ID
+   //OnChange
+    const correoChange = (x) =>{  
        const {value} = x.target;
        console.log(value);
-       setid(value);
+       setCorreo(value);
     }
-    const PasswChange = (x) =>{
-        const {value} = x.target;
-        console.log(value);
-        setpassw(value);
-    }
-
+   
     const onSubmitHandler = async () => {
-        if(id && passw){
-            if(!isNaN(id)){
-                //lo busca en la base
-                //si existe: revisa que la contraseña coincida:
-                    //si coincide: inicia sesión
-                    //si no: error
-                //si no existe: error
-                console.log("id: ", id);
-                await SearchUser(id);
+        if(correo){
+            if(correo.substring(8,correo.length) != 'up.edu.mx'){       //verifica que sea correo institucional
+                alert('Ingresa un correo institucional.\nIntenta nuevamente.')
             }else{
-                alert(`Tu ID debe estar compuesto únicamente por números\nIntenta de nuevo.`)
+
+                var abc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", codigo = "", y = abc.length
+                for (var i=1; i<8; i++)
+                codigo += abc[Math.floor(Math.random()*y)];
+                console.log(codigo)
+    
+              
             }
         }else{
-            alert(`¡Campo vacío!\nIntenta de nuevo.`)    
+            alert('Ingresa un correo.')
         }
     }
     return (
         <Container className="centrar">
         <br/>
-        <h3 className="letraTitulo">Iniciar sesión</h3>
+        <h3 className="letraTitulo">¿Olvidaste tu contraseña?</h3>
         <br/>
            <Card
                 bg='#881739'
@@ -59,30 +52,29 @@ function IniciarSesion() {
                 style={{ width: '50%'}}
                 className="cardborder"
             >
-                <Card.Header className="cardheader"><center><h4>Para continuar, introduce tu usuario...</h4></center></Card.Header>
+                <Card.Header className="cardheader"><center><h4>Recibirás un código en tu correo</h4></center></Card.Header>
                 <Card.Body className="cardbody">
                 <Card.Text>
                    <Form>
                         <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
                             <Form.Label column sm="2">
-                            ID
+                            Correo 
                             </Form.Label>
                             <Col sm="10">
-                            <Form.Control onChange={IDchange} placeholder="Introduce tu ID" />
+                            <Form.Control onChange={correoChange} placeholder="Introduce tu correo institucional" />
                             </Col>
                         </Form.Group>
 
-                        <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+                        {/* <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
                             <Form.Label column sm="2">
                             Contraseña
                             </Form.Label>
                             <Col sm="10">
-                            <Form.Control onChange={PasswChange} type="password" placeholder="Ingresa tu contraseña" />
+                            <Form.Control type="password" placeholder="Ingresa tu contraseña" />
                             </Col>
-                        </Form.Group>
+                        </Form.Group> */}
                         <center>   
-                            <Nav.Link className="inactive" componentClass={Link} href="/Forgot" to="/Forgot">¿Olvidaste tu contraseña?</Nav.Link>
-                            <Button onClick={onSubmitHandler} className="iniciarses">Iniciar Sesión</Button>
+                            <Button onClick={onSubmitHandler} className="iniciarses">Enviar código</Button>
                         </center>
                     </Form>
                 </Card.Text>
@@ -92,5 +84,5 @@ function IniciarSesion() {
         </Container>
     )
 }
-export default IniciarSesion;
-//https://medium.com/@ethantcollins98/making-a-sometimes-fixed-navbar-157013dfc4a5
+
+export default Olvidemicontraseña;

@@ -21,6 +21,15 @@ export const createUser = async({ID, password}) => {
     }
 }
 
+export const SearchUser = async(ID)=>{
+    try{
+        api.SearchUser(ID);
+        return `${ID} was found`; 
+    }catch(error){
+        console.log(error);
+    }
+}
+
 // export const deleteUser = async(id) => {
 //     try {
 //         await api.deleteUser(id);

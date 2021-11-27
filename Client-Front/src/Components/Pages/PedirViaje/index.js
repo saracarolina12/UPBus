@@ -1,11 +1,10 @@
-import '../Formulario.css';
+import './PedirViaje.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Container from "react-bootstrap/esm/Container";
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from "react-bootstrap/esm/Col";
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav'
 
@@ -15,7 +14,7 @@ function PedirViaje() {
 
         <Container className="centrar">
         <br/>
-        <h3 className="letraTitulo">Pedir viaje</h3>
+        <h3 className="iniciar">Pedir viaje</h3>
         <br/>
            <Card
                 bg='#881739'

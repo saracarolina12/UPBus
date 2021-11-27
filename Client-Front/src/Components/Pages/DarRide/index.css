@@ -1,13 +1,10 @@
-@font-face {
-    font-family: titulo;
-    src: url(./Vogue.ttf);
-}
 
 .titulo{
     text-align: center;
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 230%;
+    font-size: 250%;
     color: #881739;  
+    letter-spacing: 10px;
 }
 
 .DarRide{
@@ -36,4 +33,8 @@
 .buttonbg:hover{
     background-color: #7b1634;
     color: #fbefe1cb;
+}
+
+.parr {
+    font-size: large;
 }
