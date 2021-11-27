@@ -12,6 +12,8 @@ import { createUser, SearchUser } from '../../../Api/index.js';
 import { useEffect, useState } from 'react';
 import { getUser } from '../../../Functions';
 import React from 'react';
+import emailjs from 'emailjs-com'
+import Swal from 'sweetalert2';
 
 
 function Olvidemicontraseña() {
@@ -20,7 +22,6 @@ function Olvidemicontraseña() {
    //OnChange
     const correoChange = (x) =>{  
        const {value} = x.target;
-       console.log(value);
        setCorreo(value);
     }
    
@@ -34,8 +35,31 @@ function Olvidemicontraseña() {
                 for (var i=1; i<8; i++)
                 codigo += abc[Math.floor(Math.random()*y)];
                 console.log(codigo)
-    
-               
+
+                //enviar correo
+                var id = correo.substring(0,7)
+                var templateParams = {
+                    CODIGO: codigo,
+                    ID: id,
+                    CORREO: correo,
+                };
+                x.preventDefault(); 
+                emailjs.send(
+                    'service_0e2t94h',
+                    'template_pvx6uoh', 
+                    templateParams,
+                    'user_PcffbjIoKIDfhVAMbcRHK'
+                ).then(res=>{
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        width: 650,
+                        title: `Se ha enviado un correo de verificación a ${correo}`,
+                        showConfirmButton: false,
+                        timer: 2500
+                      })
+                    console.log(res);
+                }).catch(err=>console.log(err));
             }
         }else{
             alert('Ingresa un correo.')
@@ -55,24 +79,16 @@ function Olvidemicontraseña() {
                 <Card.Header className="cardheader"><center><h4>Recibirás un código en tu correo</h4></center></Card.Header>
                 <Card.Body className="cardbody">
                 <Card.Text>
-                   <Form>
+                   <Form onSubmit={onSubmitHandler}>
                         <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
                             <Form.Label column sm="2">
                             Correo 
                             </Form.Label>
                             <Col sm="10">
-                            <Form.Control onChange={correoChange} placeholder="Introduce tu correo institucional" />
+                            <Form.Control name="correo" onChange={correoChange} placeholder="Introduce tu correo institucional" />
                             </Col>
                         </Form.Group>
 
-                        {/* <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-                            <Form.Label column sm="2">
-                            Contraseña
-                            </Form.Label>
-                            <Col sm="10">
-                            <Form.Control type="password" placeholder="Ingresa tu contraseña" />
-                            </Col>
-                        </Form.Group> */}
                         <center>   
                             <Button onClick={onSubmitHandler} className="iniciarses">Enviar código</Button>
                         </center>
