@@ -40,3 +40,7 @@
                                         "password": "holamundo"
                                     }
                         - SEND
+        Opción #3: //se requiere tener corriendo el server
+                Navegador:
+                    -Acceder en tu navegador a:
+                            http://localhost:8000/user
