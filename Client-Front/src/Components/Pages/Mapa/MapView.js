@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import {MapContainer, TileLayer} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Markers from "./Markers";
 import {useLocation, useNavigate} from "react-router-dom"
-
 
 const MapView = (props)=>{
     //  const [state, setState] = useState({
@@ -19,6 +18,7 @@ const MapView = (props)=>{
     //      const currentLocation = {
     //            lat: "location.state.latitude",
     //            lng: "location.state.longitude",
+              
     //          };
             
             
@@ -34,6 +34,14 @@ const MapView = (props)=>{
     //          });
     //      }
     //    }, [location]);
+
+
+
+       
+
+
+
+
     return (
         <MapContainer center={{lat:"21.824206943866415", lng:"-102.28368472570067"}} zoom={13} >
             <TileLayer attribution='&copy; 
