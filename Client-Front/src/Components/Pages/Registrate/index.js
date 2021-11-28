@@ -39,7 +39,7 @@ function Registrate() {
     const onSubmitHandler = async () => {
         if(passw && id && conf){
             if(!isNaN(id)){
-                if(passw === conf){ //si las contraseñas coinciden, añadimos el
+                if(passw === conf){ //si las contraseñas coinciden, añadimos el usuario
                     await createUser({ID: id, password: passw})
                     let timerInterval
                     Swal.fire({
