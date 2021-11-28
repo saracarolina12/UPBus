@@ -22,12 +22,12 @@ function IniciarSesion() {
    //OCchange
     const IDchange = (x) =>{  //cambios ID
        const {value} = x.target;
-       console.log(value);
+    //    console.log(value);
        setid(value);
     }
     const PasswChange = (x) =>{
         const {value} = x.target;
-        console.log(value);
+        // console.log(value);
         setpassw(value);
     }
 

@@ -30,6 +30,7 @@ export const SearchUser = async(req, res)=>{
     // else{   
     //     return res.status(404).send("This id doesn't exist")
     // }
+    console.log("from controller: ",IDtosearch);
     await User.findOne(id);
 }
 

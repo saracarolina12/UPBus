@@ -15,7 +15,7 @@
     2. Instalar dependencias:
         npm i
     3. Correr proyecto:
-        npm start 
+        npm run corre (localhost:8000) 
 
     Para ver cómo se añaden usuarios al registrarse:
         Cuenta MongoDB (cuenta gmail): 
