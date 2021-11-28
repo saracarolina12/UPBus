@@ -23,4 +23,4 @@
             -contraseña: upbus123!
 
         -Ingresar a la sección: 
-           Atlas -> Databases -> myFirstDataBase -> users
+           Atlas -> Databases -> Browse Collections -> myFirstDataBase -> users
