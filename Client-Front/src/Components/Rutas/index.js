@@ -9,6 +9,7 @@ import MapView from "../Pages/Mapa/MapView.js";
 import MapInicio from "../Pages/Mapa/MapInicio";
 import Forgot from "../Pages/Forgot"
 import CodigoVerif from "../Pages/CodigoVerif";
+import Bienvenido from "../Pages/Bienvenido";
 
 const Rutas = () => {
     return (
@@ -18,6 +19,7 @@ const Rutas = () => {
                 <Routes>
                     <Route path="/" element = {<Home/>} />
                     <Route path="/PedirViaje" element = {<PedirViaje/>}/>
+                    <Route path="/Bienvenido" element={<Bienvenido/>} />  
                     <Route path="/Mapa"  element = {<MapInicio/>}/>
                     <Route path="/View"  element = {<MapView/>}/>
                     <Route path="/DarRide" element = {<DarRide />} />

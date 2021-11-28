@@ -9,15 +9,17 @@ import Button from 'react-bootstrap/Button'
 function Bienvenido() {
     return (
         <Container className="centrar">
-            <div class="cuadroexterior">
-                <div class="cuadrointerior">
-                    <h3>¡Bienvenido {}!</h3>
+                    <br/> <br/><br/><br/><br/>
+                    <h3>¡Bienvenido!</h3>
+                    <h4><i>¿Qué te gustaría hacer?</i></h4>
                     <br/>
-                    <Link to="/">
-                        <Button className="continuar">Continuar</Button>
+                    <Link to="/PedirViaje">
+                        <Button className="continuar">Pedir Viaje</Button>
                     </Link>
-                </div>
-            </div>
+                    <br/>
+                    <Link to="/DarRide">
+                        <Button className="continuar">Dar Ride</Button>
+                    </Link>
         </Container>
     )
 }

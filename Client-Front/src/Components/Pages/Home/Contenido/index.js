@@ -7,11 +7,13 @@ import './Contenido.css';
 function ContenidoHome() {
     return (      
         <div>
-            <div className="centrarHome">
+            {/* <div className="centrarHome">
             <Button className="colorBoton" href="/PedirViaje">Pedir viaje</Button>
             <Button className="colorBoton" href="/DarRide">Dar ride</Button>
-            </div>
-
+            </div> */}
+            <br/><br/>
+            <center><h3 className="tituloprin">¿Por qué elegir UpBus?</h3></center>
+            <br/><br/>
             <div className ="textoDiv">
             <Row>
                 <Col>

@@ -17,9 +17,19 @@
 .continuar{
     background-color: #881739;
     border: #881739;
+    font-size: 130%;
+    width: 10rem;
+    height: 6rem;
 }
 
 .continuar:hover {
     background-color: #7b1634;
     color: #fbefe1cb;
+}
+
+h3{
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 250%;
+    color: #881739;  
+    letter-spacing: 10px;
 }

@@ -10,3 +10,10 @@
 body {
     background-color:rgba(253, 249, 244, 0.89);
 }
+
+.izq {
+    display: flex;
+    align-items:flex-start;
+    justify-content: left;
+    color: rgba(253, 249, 244, 0.89);
+}

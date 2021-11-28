@@ -23,23 +23,16 @@ function IniciarSesion() {
    //OCchange
     const IDchange = (x) =>{  //cambios ID
        const {value} = x.target;
-    //    console.log(value);
        setid(value);
     }
     const PasswChange = (x) =>{
         const {value} = x.target;
-        // console.log(value);
         setpassw(value);
     }
 
     const onSubmitHandler = async () => {
         if(id && passw){
             if(!isNaN(id)){
-                //lo busca en la base
-                //si existe: revisa que la contraseña coincida:
-                    //si coincide: inicia sesión
-                    //si no: error
-                //si no existe: error
                 var flag = false, index=-1;
                 const search = await SearchUser({ID: id});
                 for(let i=0; i<search.data.length; i++){
@@ -50,7 +43,6 @@ function IniciarSesion() {
                         break;
                     }
                 }
-                // console.log(search.data[index].password);
                 if(flag === true && passw === search.data[index].password){ //lo encontró
                     // alert('usario encontrado y contraseña correcta')
                     let timerInterval
@@ -67,7 +59,7 @@ function IniciarSesion() {
                                 clearInterval(timerInterval)
                             }
                         }).then(function() {
-                            window.location = "/Menu";
+                            window.location = "/Bienvenido";
                         });
                 }else{
                     if(flag === false){ //no encontró el usuario

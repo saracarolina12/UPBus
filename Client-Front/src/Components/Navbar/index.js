@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container'
 import "bootstrap/dist/css/bootstrap.min.css"
 import logo from './logo.png'
 import { Link } from "react-router-dom";
+import Col from "react-bootstrap/esm/Col";
 
 function Navb() {
     return (
@@ -14,10 +15,11 @@ function Navb() {
     <Navbar.Brand componentClass={Link} href="/" to="/"><img img src={logo} alt="Logo" className="imgNavb"/></Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="me-auto">
+        {/* <Nav className="me-auto">
             <Nav.Link componentClass={Link} href="/PedirViaje" to="/PedirViaje">Pedir viaje</Nav.Link>
             <Nav.Link componentClass={Link} href="/DarRide" to="/DarRide">Dar ride</Nav.Link>
-        </Nav>
+        </Nav> */}
+         <Col className="izq"><p className="textFoot"></p></Col>
         <Nav>
             <Nav.Link componentClass={Link} href="/IniciarSesion" to="/IniciarSesion">Iniciar sesión</Nav.Link>
             <Nav.Link componentClass={Link} href="/Registrate" to="/Registrate" eventKey={2} >Regístrate</Nav.Link>
