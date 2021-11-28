@@ -26,7 +26,7 @@ function Olvidemicontraseña() {
 
     const onSubmitHandler = async (x) => {
         if(correo){
-            if(correo.substring(8,correo.length) != 'up.edu.mx'){       //verifica que sea correo institucional
+            if(correo.substring(8,correo.length) !== 'up.edu.mx'){       //verifica que sea correo institucional
                 alert('Ingresa un correo institucional.\nIntenta nuevamente.')
             }else{
                 x.preventDefault();

@@ -3,8 +3,8 @@ import mongoose from "mongoose";
 
 export const getUser = async(req, res) => {
     try{
-        const User = await User.find();
-        res.status(200).json(User);
+        const Users = await User.find();
+        res.status(200).json(Users);
     }catch(error){
         res.status(400).json({message: error.message});
     }
@@ -22,16 +22,13 @@ export const createUser = async(req, res) => {
 };
 
 export const SearchUser = async(req, res)=>{
-    const {id} = req.body;
-    // if(User.findOne(id)){
-    //     await User.findOne(id);
-    //     res.status(200).json({message: "Found!!"})
-    // }
-    // else{   
-    //     return res.status(404).send("This id doesn't exist")
-    // }
-    console.log("from controller: ",IDtosearch);
-    await User.findOne(id);
+    try{
+        const User = await User.findOne(id);
+        res.status(200).json(User);
+    }catch(error){
+        res.status(400).json({message: error.message});
+    }
+    
 }
 
 // export const deleteTodos = async(req, res) => {

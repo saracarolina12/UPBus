@@ -13,12 +13,13 @@ app.use(express.urlencoded({limit: "30mb", extended: true}));
 // const MONGO_URL = `mongodb+srv://${process.env.mongousername}:${process.env.mongopassword}@miprimercluster.ozjrf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 const MONGO_URL = `mongodb+srv://${process.env.mongousername}:${process.env.mongopassword}@upbusags.gpjwn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 //console.log(MONGO_URL);
+
 const PORT = process.env.PORT || 5000;      
 console.log(PORT);
 app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send("<p>Servidor corriendo...</p>")
+  res.send("<p>Servidor corriendo...</p>")
 });
 
 app.use("/user", userRoutes);
