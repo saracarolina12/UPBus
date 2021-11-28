@@ -48,12 +48,15 @@ const MapView = (props)=>{
         <div>
             <br/>
             <br/>
+            <center><h3 className="letraTitulo">¡Aquí te encuentras en este momento!</h3></center>
+            <br/>
             <MapContainer center={{lat:"21.824206943866415", lng:"-102.28368472570067"}} zoom={13} >
             <TileLayer attribution='&copy; 
             <a href="http://osm.org/copyright">OpenStreetMap</a> 
             contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <Markers />
+            
         </MapContainer>
         <h1 className="aaaa1">Instrucciones:</h1>
         <p className="aaaa"><b>1. Si tu localización no aparece, pese a que permitiste el acceso a tu ubicación, se debe configurar manualmente.</b></p>
