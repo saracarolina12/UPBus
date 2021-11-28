@@ -39,8 +39,8 @@ function IniciarSesion() {
                     //si coincide: inicia sesión
                     //si no: error
                 //si no existe: error
-                console.log("id: ", id);
-                await SearchUser(id);
+                const search = await SearchUser({ID: id});
+                console.log(search);
             }else{
                 alert(`Tu ID debe estar compuesto únicamente por números\nIntenta de nuevo.`)
             }

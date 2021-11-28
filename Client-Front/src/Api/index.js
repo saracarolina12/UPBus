@@ -7,7 +7,8 @@ export const getUser = () => axios.get(url);
 export const createUser = (newUser) => axios.post(url, newUser); 
 
 export const SearchUser = (IDtosearch) =>{
-    axios.get(url,IDtosearch);  
+    axios.get(url, IDtosearch);  
+    console.log(IDtosearch);
 }     
 // export const deleteUser = (id) => axios.delete(`${url}/${id}`); 
 

@@ -22,9 +22,11 @@ export const createUser = async(req, res) => {
 };
 
 export const SearchUser = async(req, res)=>{
+    const {IDtosearch} = req.params;
+    console.log("search");
     try{
-        const User = await User.findOne(id);
-        res.status(200).json(User);
+        const Users = await User.findOne(IDtosearch);
+        res.status(200).json(Users);
     }catch(error){
         res.status(400).json({message: error.message});
     }
