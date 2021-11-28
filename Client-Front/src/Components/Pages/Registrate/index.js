@@ -21,17 +21,17 @@ function Registrate() {
     //OCchange
      const IDchange = (x) =>{  //cambios ID
         const {value} = x.target;
-        console.log(value);
+        // console.log(value);
         setid(value);
      }
      const PasswChange = (x) =>{
          const {value} = x.target;
-         console.log(value);
+        //  console.log(value);
          setpassw(value);
      }
      const ConfChange = (x) =>{
         const {value} = x.target;
-        console.log(value);
+        // console.log(value);
         setConf(value);
     }
 
@@ -74,7 +74,7 @@ function Registrate() {
         const fetchData = async() => {
             const result = await getUser();
             setState(result);                       //guardo el fetch
-            console.log('Fetched data', result);
+            // console.log('Fetched data', result);
         };
         fetchData();
     }, [state]);

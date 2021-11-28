@@ -21,11 +21,12 @@ export const createUser = async({ID, password}) => {
     }
 }
 
-export const SearchUser = async(ID)=>{
-    try{
-        api.SearchUser(ID);
-        return `${ID} was found`; 
-    }catch(error){
+export const SearchUser = async({ID})=>{
+    try {
+        const {data} = await api.SearchUser({ID});
+        return data;
+    }
+    catch(error) {
         console.log(error);
     }
 }

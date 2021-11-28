@@ -12,6 +12,7 @@ import { createUser, SearchUser } from '../../../Api/index.js';
 import { useEffect, useState } from 'react';
 import { getUser } from '../../../Functions';
 import React from 'react';
+import Swal from 'sweetalert2'
 
 
 function IniciarSesion() {
@@ -39,8 +40,44 @@ function IniciarSesion() {
                     //si coincide: inicia sesión
                     //si no: error
                 //si no existe: error
+                var flag = false, index=-1;
                 const search = await SearchUser({ID: id});
-                console.log(search);
+                for(let i=0; i<search.data.length; i++){
+                    let len = (search.data[i].ID).toString().length
+                    if(id == search.data[i].ID && id.length == len){
+                        flag = true;
+                        index = i;
+                        break;
+                    }
+                }
+                // console.log(search.data[index].password);
+                if(flag === true && passw === search.data[index].password){ //lo encontró
+                    // alert('usario encontrado y contraseña correcta')
+                    let timerInterval
+                    Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: `¡Bienvenido ${id}!`,
+                            timer: 1200,
+                            timerProgressBar: true,
+                            didOpen: () => {
+                                Swal.showLoading()
+                            },
+                            willClose: () => {  
+                                clearInterval(timerInterval)
+                            }
+                        }).then(function() {
+                            window.location = "/Menu";
+                        });
+                }else{
+                    if(flag === false){ //no encontró el usuario
+                        alert('Lo sentimos, tu usuario no existe.\n¡Te invitamos a registrarte!')
+                    }
+                    else if(passw !== search.data[index].password){ //no coincide la contraseña
+                        alert('Contraseña incorrecta.\nIntenta nuevamente')
+                    }
+                }
+
             }else{
                 alert(`Tu ID debe estar compuesto únicamente por números\nIntenta de nuevo.`)
             }

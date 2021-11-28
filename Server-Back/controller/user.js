@@ -22,16 +22,22 @@ export const createUser = async(req, res) => {
 };
 
 export const SearchUser = async(req, res)=>{
-    const {IDtosearch} = req.params;
-    console.log("search");
+    // const {IDtosearch} = req.params;
+        // try{
+        //     const Users = await User.findOne({_id: req.IDtosearch._id});
+    //     res.status(200).json(Users);
+    // }catch(error){
+    //     res.status(400).json({message: error.message});
+    // }
     try{
-        const Users = await User.findOne(IDtosearch);
+        const Users = await User.findOne({_id: req.IDtosearch._id});
         res.status(200).json(Users);
     }catch(error){
         res.status(400).json({message: error.message});
-    }
+    }  
     
 }
+
 
 // export const deleteTodos = async(req, res) => {
 //     const {id} = req.params;
