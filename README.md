@@ -18,9 +18,25 @@
         npm run corre (localhost:8000) 
 
     Para ver cómo se añaden usuarios al registrarse:
-        Cuenta MongoDB (cuenta gmail): 
-            -usuario: upbusags@gmail.com
-            -contraseña: upbus123!
+        Opción #1:
+                MongoDB: https://account.mongodb.com/account/login?nds=true
+                    Cuenta MongoDB (cuenta gmail): 
+                        -usuario: upbusags@gmail.com
+                        -contraseña: upbus123!
 
-        -Ingresar a la sección: 
-           Atlas -> Databases -> Browse Collections -> myFirstDataBase -> users
+                    -Ingresar a la sección: 
+                        Atlas -> Databases -> Browse Collections -> myFirstDataBase -> users
+
+        Opción #2: //se requiere tener corriendo el server
+                Postman: 
+                    ver usuarios existentes:
+                        - [GET] -> http://localhost:8000/user -> Params ->   SEND
+                    crear nuevo usuario:
+                        - [POST] -> http://localhost:8000/user -> Body -> raw -> [JSON]
+                        - Añadir en forma de json la información del usuario
+                            ejemplo:
+                                    {
+                                        "ID": "0101011",
+                                        "password": "holamundo"
+                                    }
+                        - SEND
