@@ -11,7 +11,7 @@ export const getUser = async(req, res) => {
 };
 
 export const createUser = async(req, res) => {
-    console.log(req.body);
+    //console.log("req of new user: ",req.body);
     const user = new User(req.body);
     try {
         await user.save();
@@ -32,10 +32,10 @@ export const SearchUser = async(req, res)=>{
 }
 
 export const updatePassword = async(req,res)=>{
-    console.log("reqbodyyy:", req.body);
+    //console.log("this ID: ", req.body.ID, "  new password: ", req.body.password);
     try{
-        // const Newdata = await User.updateOne({ID: id}, {$set:{password: newpassword}})
-        // res.status(200).json(Newdata);
+        const Newdata = await User.updateOne({ID: req.body.ID}, {$set:{password: req.body.password}}) //cambio de contraseña
+        res.status(200).json(Newdata);
     }
     catch(error){
         res.status(400).json({message: error.message})

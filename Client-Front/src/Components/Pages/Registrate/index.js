@@ -39,27 +39,52 @@ function Registrate() {
     const onSubmitHandler = async () => {
         if(passw && id && conf){
             if(!isNaN(id)){
-                if(passw === conf){ //si las contraseñas coinciden, añadimos el usuario
-                    await createUser({ID: id, password: passw})
+               var exists = false
+               for(let i=0; i<state.length; i++){
+                    if(id === state[i].ID){
+                        exists = true
+                        break;
+                    }
+               }
+                if(exists === true){
+                    //alert('Este usuario ya existe.\n¡Te invitamos a iniciar sesión!')
                     let timerInterval
                     Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: '¡Tu usuario ha sido registrado correctamente!',
-                        timer: 650,
+                        title: 'Este usuario ya existe.\n¡Te invitamos a iniciar sesión!',
+                        timer: 2300,
                         timerProgressBar: true,
-                        didOpen: () => {
-                            Swal.showLoading()
-                        },
-                        willClose: () => {  
-                            clearInterval(timerInterval)
-                        }
+                    didOpen: () => {
+                        Swal.showLoading()
+                    },
+                    willClose: () => {  
+                        clearInterval(timerInterval)
+                    }
                     }).then(function() {
                         window.location = "/IniciarSesion";
                     });
-                }
-                else{
-                    alert(`¡Las contraseñas no coinciden!\nIntenta de nuevo.`)
+                }else{
+                    if(passw === conf){ //si las contraseñas coinciden, añadimos el usuario
+                        await createUser({ID: id, password: passw})
+                        let timerInterval
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: '¡Tu usuario ha sido registrado correctamente!',
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: () => {
+                                Swal.showLoading()
+                            },
+                            willClose: () => {  
+                                clearInterval(timerInterval)
+                            }
+                        }).then(function() {
+                            window.location = "/IniciarSesion";
+                        });
+                    }
+                    else{
+                        alert(`¡Las contraseñas no coinciden!\nIntenta de nuevo.`)
+                    }
                 }
             }else{
                 alert(`Tu ID debe estar compuesto únicamente por números\nIntenta de nuevo.`)

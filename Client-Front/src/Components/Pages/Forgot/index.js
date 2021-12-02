@@ -51,16 +51,15 @@ function Olvidemicontraseña() {
                 };
 
                 
-                x.preventDefault(); 
+               /* x.preventDefault(); 
                 emailjs.send(
                     'service_0e2t94h',
                     'template_pvx6uoh', 
                     templateParams,
                     'user_PcffbjIoKIDfhVAMbcRHK'
-                ).then(res=>{
+                ).then(res=>{*/
                     var exists = false, index = -1;
                     for(let i=0; i<users.length; i++){
-                        // console.log("users[i]: ",users[i].ID, " -   ID: ", id);
                         if(users[i].ID === id){ //si encuentra al usuario
                             exists = true;
                             break;
@@ -72,11 +71,7 @@ function Olvidemicontraseña() {
                             icon: 'success',
                             width: 650,
                             title: `Se ha enviado un correo de verificación a ${correo}`,
-                            // showConfirmButton: true,
-                            timer: 2500,
-                            // confirmButtonText: '<a href="/CodigoVerif">Continuar</a>',
-                            // confirmButtonText: 'Continuar',
-                            // confirmButtonColor: '#6CBB30',
+                             confirmButtonColor: '#6CBB30',
                             preConfirm: (ok) => {
                                 Swal.fire({
                                     title: 'Ingresa tu código de verificación',
@@ -105,12 +100,12 @@ function Olvidemicontraseña() {
                             }
                             
                           })
-                        console.log(res);
+                        //console.log(res);
                     }else{
                         alert('El usuario ingresado no existe.\nIntenta nuevamente.')
                     }
                     
-                }).catch(err=>console.log("ERRORRR:\n",err));
+                //}).catch(err=>console.log("ERRORRR:\n",err));
             }
         }else{
             alert('Ingresa un correo.')
@@ -118,7 +113,6 @@ function Olvidemicontraseña() {
     }
 
     useEffect(() => {
-        //console.log('todos');
         const fetchData = async() => {
         const result = await getUser();
         setUsers(result)

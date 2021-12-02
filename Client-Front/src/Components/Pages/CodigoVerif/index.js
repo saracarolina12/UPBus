@@ -35,7 +35,7 @@ function CodigoVerif() {
                 //  for(let i=0; i<users.length; i++){
                 //     if(ID === users[i].ID){ //cuando lo encuentra, cambia la contraseña
                         //users[i].password = Uno;
-                updatePassword(ID,Uno)
+                updatePassword({ID: ID, password: Uno})
 
                 //         break;
                 //     }
@@ -45,7 +45,7 @@ function CodigoVerif() {
                     position: 'center',
                     icon: 'success',
                     title: 'Se ha restablecido tu contraseña correctamente.',
-                    timer: 1400,
+                    timer: 2000,
                     timerProgressBar: true,
                     didOpen: () => {
                         Swal.showLoading()
@@ -65,11 +65,9 @@ function CodigoVerif() {
     }
 
     useEffect(() => {
-        //console.log('todos');
         const fetchData = async() => {
         const result = await getUser();
         setUsers(result)
-        //console.log('ferched Data codigoverif', result.length)
         };
         fetchData();
     }, []);
