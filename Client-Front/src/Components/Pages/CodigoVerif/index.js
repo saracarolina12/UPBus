@@ -28,37 +28,58 @@ function CodigoVerif() {
         const {value} = x.target;
         setDos(value);
      }
+
+     function ValidatePassword(Uno, Dos) {
+         var spaces=false, contNums=0, contSpaces=0, err="", OK=true, RESULTOFVALIDATING=[true, null]; //RESULTOFVALIDATING[true/false , error]
+         while(!spaces && (contSpaces < Uno.length)){
+            if(Uno.charAt(contSpaces) == " ") spaces = true;
+            contSpaces++;
+         }
+         for(let i=0; i<Dos.length; i++){
+            if(!isNaN(Dos[i])) contNums++; //para ver que exista al menos un número
+         }
+         if(Uno.length<8 || Dos.length<8){
+           err += "\n*Tu contraseña debe contener al menos 8 caracteres."
+           RESULTOFVALIDATING[0] = false; RESULTOFVALIDATING[1] = err;
+         }
+         if(contNums === 0){
+            err += "\n*Tu contraseña debe contener al menos un número."
+            RESULTOFVALIDATING[0] = false; RESULTOFVALIDATING[1] = err;
+         } 
+         if(spaces){
+            err += "\n*La contraseña no puede contener espacios en blanco."
+            RESULTOFVALIDATING[0] = false; RESULTOFVALIDATING[1] = err;
+         }
+        return RESULTOFVALIDATING; //si es válida la contraseña, regresa [true, null] /// si NO es válida, regresa [false, el error]
+     }
     const onSubmitHandler = async (x) => {
         if(Uno && Dos){
-            if(Uno == Dos){
-                var ID = JSON.parse(localStorage.getItem('ID'));
-                //  for(let i=0; i<users.length; i++){
-                //     if(ID === users[i].ID){ //cuando lo encuentra, cambia la contraseña
-                        //users[i].password = Uno;
-                updatePassword({ID: ID, password: Uno})
-
-                //         break;
-                //     }
-                // }
-                let timerInterval
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: 'Se ha restablecido tu contraseña correctamente.',
-                    timer: 2000,
-                    timerProgressBar: true,
-                    didOpen: () => {
-                        Swal.showLoading()
-                    },
-                    willClose: () => {  
-                        clearInterval(timerInterval)
-                    }
-                }).then(function() {
-                    window.location = "/IniciarSesion";
-                });
-            }else{
-                alert('Las contraseñas no coinciden.\nIntenta nuevamente.')
-            }
+            let validated = ValidatePassword(Uno, Dos);
+            if(validated[0] === false) alert(`Errores:${validated[1]}`)
+            else{
+                if(Uno == Dos){
+                    var ID = JSON.parse(localStorage.getItem('ID'));
+                    updatePassword({ID: ID, password: Uno}) //le cambia la contraseña al usuario
+                    let timerInterval
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Se ha restablecido tu contraseña correctamente.',
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading()
+                        },
+                        willClose: () => {  
+                            clearInterval(timerInterval)
+                        }
+                    }).then(function() {
+                        window.location = "/IniciarSesion";
+                    });
+                }else{
+                    alert('Las contraseñas no coinciden.\nIntenta nuevamente.')
+                }
+            }      
         }else{
             alert('Campo Vacío.\nIntenta nuevamente.')
         }

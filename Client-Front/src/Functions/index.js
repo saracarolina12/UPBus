@@ -51,11 +51,3 @@ export const updatePassword = async({newdata}) =>{
         console.log(error);
     }
 }
-// export const deleteUser = async(id) => {
-//     try {
-//         await api.deleteUser(id);
-//         return `${id} deleted successfully`;
-//     }catch (error) {
-//         console.log(error)
-//     }
-// }

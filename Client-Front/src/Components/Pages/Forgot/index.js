@@ -116,7 +116,6 @@ function Olvidemicontraseña() {
         const fetchData = async() => {
         const result = await getUser();
         setUsers(result)
-        //console.log('fetched Data Forgot', result)
         };
         fetchData();
     }, []);
@@ -155,7 +154,6 @@ function Olvidemicontraseña() {
     )
     
 }
-
 
 export default Olvidemicontraseña;
 
