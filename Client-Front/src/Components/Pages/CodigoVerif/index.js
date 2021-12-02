@@ -8,12 +8,12 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav'
-import { createUser, SearchUser } from '../../../Api/index.js';
+import { createUser, SearchUser, LastIDs, updatePassword} from '../../../Api/index.js';
 import { useEffect, useState } from 'react';
 import { getUser } from '../../../Functions';
 import React from 'react';
 import Swal from 'sweetalert2';
-import Forgot from '../Forgot'
+
 
 function CodigoVerif() {
     const [users, setUsers] = useState();
@@ -31,9 +31,15 @@ function CodigoVerif() {
     const onSubmitHandler = async (x) => {
         if(Uno && Dos){
             if(Uno == Dos){
-                for(let i=0; i<users.length; i++){
-                    
-                }
+                var ID = JSON.parse(localStorage.getItem('ID'));
+                //  for(let i=0; i<users.length; i++){
+                //     if(ID === users[i].ID){ //cuando lo encuentra, cambia la contraseña
+                        //users[i].password = Uno;
+                updatePassword(ID,Uno)
+
+                //         break;
+                //     }
+                // }
                 let timerInterval
                 Swal.fire({
                     position: 'center',

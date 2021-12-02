@@ -20,9 +20,12 @@ function Olvidemicontraseña() {
     const [state, setState] = useState();
     const [users, setUsers] = useState();
     const [lastID, setlastID] = useState();
+    
    //OnChange
     const correoChange = (x) =>{  
        const {value} = x.target;
+       const {lastID} = x.target;
+       setlastID(value.substring(0,7))
        setCorreo(value);
     }
 
@@ -40,13 +43,14 @@ function Olvidemicontraseña() {
 
                 //enviar correo
                 var id = correo.substring(0,7)
+                localStorage.setItem('ID', JSON.stringify(lastID)); //guardo en variable global el último ID utilizado
                 var templateParams = {
                     CODIGO: codigo,
                     ID: id,
                     CORREO: correo,
                 };
-                // console.log("usersssss: ", users);
-                // console.log("id: ", ID);
+
+                
                 x.preventDefault(); 
                 emailjs.send(
                     'service_0e2t94h',
@@ -56,7 +60,7 @@ function Olvidemicontraseña() {
                 ).then(res=>{
                     var exists = false, index = -1;
                     for(let i=0; i<users.length; i++){
-                        console.log("users[i]: ",users[i].ID, " -   ID: ", id);
+                        // console.log("users[i]: ",users[i].ID, " -   ID: ", id);
                         if(users[i].ID === id){ //si encuentra al usuario
                             exists = true;
                             break;

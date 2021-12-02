@@ -41,6 +41,15 @@ export const updateUser = async({Location}) => {
     }
 }
 
+export const updatePassword = async({id,newpassword}) =>{
+    try{
+        const NEWDATA = api.updatePassword({id, newpassword});
+        return NEWDATA;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
 // export const deleteUser = async(id) => {
 //     try {
 //         await api.deleteUser(id);

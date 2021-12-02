@@ -22,13 +22,6 @@ export const createUser = async(req, res) => {
 };
 
 export const SearchUser = async(req, res)=>{
-    // const {IDtosearch} = req.params;
-        // try{
-        //     const Users = await User.findOne({_id: req.IDtosearch._id});
-    //     res.status(200).json(Users);
-    // }catch(error){
-    //     res.status(400).json({message: error.message});
-    // }
     try{
         const Users = await User.findOne({_id: req.IDtosearch._id});
         res.status(200).json(Users);
@@ -38,12 +31,14 @@ export const SearchUser = async(req, res)=>{
     
 }
 
+export const updatePassword = async(req,res)=>{
+    console.log("reqbodyyy:", req.body);
+    try{
+        // const Newdata = await User.updateOne({ID: id}, {$set:{password: newpassword}})
+        // res.status(200).json(Newdata);
+    }
+    catch(error){
+        res.status(400).json({message: error.message})
+    }
+}
 
-// export const deleteTodos = async(req, res) => {
-//     const {id} = req.params;
-//     if (!mongoose.Types.ObjectId.isValid(id))
-//         return res.status(404).send("This id doesn't exist")
-    
-//     await Todo.findByIdAndRemove(id);
-//         res.status(200).json({message : "Todo deleted successfully"})
-// };
