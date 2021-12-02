@@ -12,11 +12,11 @@ import { createUser, SearchUser } from '../../../Api/index.js';
 import { useEffect, useState } from 'react';
 import { getUser } from '../../../Functions';
 import React from 'react';
-import emailjs from 'emailjs-com'
 import Swal from 'sweetalert2';
+import Forgot from '../Forgot'
 
 function CodigoVerif() {
-    
+    const [users, setUsers] = useState();
     const [Uno, setUno] = useState();
     const [Dos, setDos] = useState();
    //OnChange
@@ -31,6 +31,9 @@ function CodigoVerif() {
     const onSubmitHandler = async (x) => {
         if(Uno && Dos){
             if(Uno == Dos){
+                for(let i=0; i<users.length; i++){
+                    
+                }
                 let timerInterval
                 Swal.fire({
                     position: 'center',
@@ -54,6 +57,16 @@ function CodigoVerif() {
             alert('Campo Vacío.\nIntenta nuevamente.')
         }
     }
+
+    useEffect(() => {
+        //console.log('todos');
+        const fetchData = async() => {
+        const result = await getUser();
+        setUsers(result)
+        //console.log('ferched Data codigoverif', result.length)
+        };
+        fetchData();
+    }, []);
     return (
         <Container className="centrar">
         <br/>

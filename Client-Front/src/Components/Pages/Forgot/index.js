@@ -18,6 +18,8 @@ import Swal from 'sweetalert2';
 function Olvidemicontraseña() {
     const [correo, setCorreo] = useState();
     const [state, setState] = useState();
+    const [users, setUsers] = useState();
+    const [lastID, setlastID] = useState();
    //OnChange
     const correoChange = (x) =>{  
        const {value} = x.target;
@@ -43,6 +45,8 @@ function Olvidemicontraseña() {
                     ID: id,
                     CORREO: correo,
                 };
+                // console.log("usersssss: ", users);
+                // console.log("id: ", ID);
                 x.preventDefault(); 
                 emailjs.send(
                     'service_0e2t94h',
@@ -50,51 +54,74 @@ function Olvidemicontraseña() {
                     templateParams,
                     'user_PcffbjIoKIDfhVAMbcRHK'
                 ).then(res=>{
-                    Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        width: 650,
-                        title: `Se ha enviado un correo de verificación a ${correo}`,
-                        // showConfirmButton: true,
-                        timer: 2500,
-                        // confirmButtonText: '<a href="/CodigoVerif">Continuar</a>',
-                        // confirmButtonText: 'Continuar',
-                        // confirmButtonColor: '#6CBB30',
-                        preConfirm: (ok) => {
-                            Swal.fire({
-                                title: 'Ingresa tu código de verificación',
-                                input: 'text',
-                                confirmButtonText: 'Restaurar contraseña',
-                                confirmButtonColor: '#6CBB30',
-                                preConfirm: (validar) => {
-                                    if(validar == codigo){
-                                        let timerInterval
-                                            Swal.fire({
-                                            title: 'Cargando...',
-                                            timer: 1000,
-                                            timerProgressBar: true,
-                                            didOpen: () => {
-                                                Swal.showLoading()
-                                            },
-                                            willClose: () => {  
-                                                clearInterval(timerInterval)
-                                            }
-                                            }).then(function() {
-                                                window.location = "/CodigoVerif";
-                                            });
-                                    }
-                                }
-                             })
+                    var exists = false, index = -1;
+                    for(let i=0; i<users.length; i++){
+                        console.log("users[i]: ",users[i].ID, " -   ID: ", id);
+                        if(users[i].ID === id){ //si encuentra al usuario
+                            exists = true;
+                            break;
                         }
-                        
-                      })
-                    console.log(res);
+                    }
+                    if(exists === true){
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            width: 650,
+                            title: `Se ha enviado un correo de verificación a ${correo}`,
+                            // showConfirmButton: true,
+                            timer: 2500,
+                            // confirmButtonText: '<a href="/CodigoVerif">Continuar</a>',
+                            // confirmButtonText: 'Continuar',
+                            // confirmButtonColor: '#6CBB30',
+                            preConfirm: (ok) => {
+                                Swal.fire({
+                                    title: 'Ingresa tu código de verificación',
+                                    input: 'text',
+                                    confirmButtonText: 'Restaurar contraseña',
+                                    confirmButtonColor: '#6CBB30',
+                                    preConfirm: (validar) => {
+                                        if(validar == codigo){
+                                            let timerInterval
+                                                Swal.fire({
+                                                title: 'Cargando...',
+                                                timer: 1000,
+                                                timerProgressBar: true,
+                                                didOpen: () => {
+                                                    Swal.showLoading()
+                                                },
+                                                willClose: () => {  
+                                                    clearInterval(timerInterval)
+                                                }
+                                                }).then(function() {
+                                                    window.location = "/CodigoVerif";
+                                                });
+                                        }
+                                    }
+                                 })
+                            }
+                            
+                          })
+                        console.log(res);
+                    }else{
+                        alert('El usuario ingresado no existe.\nIntenta nuevamente.')
+                    }
+                    
                 }).catch(err=>console.log("ERRORRR:\n",err));
             }
         }else{
             alert('Ingresa un correo.')
         }
     }
+
+    useEffect(() => {
+        //console.log('todos');
+        const fetchData = async() => {
+        const result = await getUser();
+        setUsers(result)
+        //console.log('fetched Data Forgot', result)
+        };
+        fetchData();
+    }, []);
     return (
         <Container className="centrar">
         <br/>
@@ -130,6 +157,7 @@ function Olvidemicontraseña() {
     )
     
 }
+
 
 export default Olvidemicontraseña;
 

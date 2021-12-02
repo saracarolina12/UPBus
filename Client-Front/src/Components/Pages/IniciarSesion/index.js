@@ -37,7 +37,7 @@ function IniciarSesion() {
                 const search = await SearchUser({ID: id});
                 for(let i=0; i<search.data.length; i++){
                     let len = (search.data[i].ID).toString().length
-                    if(id == search.data[i].ID && id.length == len){
+                    if(id === search.data[i].ID && id.length === len){
                         flag = true;
                         index = i;
                         break;
