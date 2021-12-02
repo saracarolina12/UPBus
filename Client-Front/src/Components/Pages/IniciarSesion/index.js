@@ -45,6 +45,8 @@ function IniciarSesion() {
                 }
                 if(flag === true && passw === search.data[index].password){ //lo encontró
                     // alert('usario encontrado y contraseña correcta')
+                    localStorage.setItem('IDUsuario', JSON.stringify(id)); //guardo en variable global el último ID utilizado
+                    console.log("stored: ", JSON.parse(localStorage.getItem('IDUsuario')));
                     let timerInterval
                     Swal.fire({
                             position: 'center',
