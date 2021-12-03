@@ -35,6 +35,30 @@ function Registrate() {
         setConf(value);
     }
 
+    function ValidatePassword(Uno, Dos) {
+        var spaces=false, contNums=0, contSpaces=0, err="", OK=true, RESULTOFVALIDATING=[true, null]; //RESULTOFVALIDATING[true/false , error]
+        while(!spaces && (contSpaces < Uno.length)){
+           if(Uno.charAt(contSpaces) == " ") spaces = true;
+           contSpaces++;
+        }
+        for(let i=0; i<Dos.length; i++){
+           if(!isNaN(Dos[i])) contNums++; //para ver que exista al menos un número
+        }
+        if(Uno.length<8 || Dos.length<8){
+          err += "\n*Tu contraseña debe contener al menos 8 caracteres."
+          RESULTOFVALIDATING[0] = false; RESULTOFVALIDATING[1] = err;
+        }
+        if(contNums === 0){
+           err += "\n*Tu contraseña debe contener al menos un número."
+           RESULTOFVALIDATING[0] = false; RESULTOFVALIDATING[1] = err;
+        } 
+        if(spaces){
+           err += "\n*La contraseña no puede contener espacios en blanco."
+           RESULTOFVALIDATING[0] = false; RESULTOFVALIDATING[1] = err;
+        }
+       return RESULTOFVALIDATING; //si es válida la contraseña, regresa [true, null] /// si NO es válida, regresa [false, el error]
+    }
+
     //Create
     const onSubmitHandler = async () => {
         if(passw && id && conf){
@@ -63,27 +87,31 @@ function Registrate() {
                         window.location = "/IniciarSesion";
                     });
                 }else{
-                    if(passw === conf){ //si las contraseñas coinciden, añadimos el usuario
-                        await createUser({ID: id, password: passw})
-                        let timerInterval
-                        Swal.fire({
-                            position: 'center',
-                            icon: 'success',
-                            title: '¡Tu usuario ha sido registrado correctamente!',
-                            timer: 2000,
-                            timerProgressBar: true,
-                            didOpen: () => {
-                                Swal.showLoading()
-                            },
-                            willClose: () => {  
-                                clearInterval(timerInterval)
-                            }
-                        }).then(function() {
-                            window.location = "/IniciarSesion";
-                        });
-                    }
+                    let validated = ValidatePassword(passw, conf);
+                    if(validated[0]===false) alert(`Errores:${validated[1]}`)
                     else{
-                        alert(`¡Las contraseñas no coinciden!\nIntenta de nuevo.`)
+                        if(passw === conf){ //si las contraseñas coinciden, añadimos el usuario
+                            await createUser({ID: id, password: passw})
+                            let timerInterval
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: '¡Tu usuario ha sido registrado correctamente!',
+                                timer: 2000,
+                                timerProgressBar: true,
+                                didOpen: () => {
+                                    Swal.showLoading()
+                                },
+                                willClose: () => {  
+                                    clearInterval(timerInterval)
+                                }
+                            }).then(function() {
+                                window.location = "/IniciarSesion";
+                            });
+                        }
+                        else{
+                            alert(`¡Las contraseñas no coinciden!\nIntenta de nuevo.`)
+                        }
                     }
                 }
             }else{
