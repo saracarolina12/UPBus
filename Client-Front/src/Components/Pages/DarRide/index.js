@@ -6,9 +6,17 @@ import Card from "react-bootstrap/esm/Card";
 import Button from "react-bootstrap/esm/Button";
 import { useEffect, useState } from "react";
 import { updateUser, getUser } from "../../../Functions/index.js";
+import { updateConductor } from "../../../Api/index.js";
 
 function DarRide() {
     const [users, setUser] = useState();
+
+  /*onClickHandler(){
+    //correo conductor
+    //correo pasajero
+    //aumentar horas
+    updateConductor();
+  };*/
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,15 +31,22 @@ function DarRide() {
            <br/>
            <h3 className="titulo">Selecciona la ubicacion por la que puedes pasar</h3>
            {users &&
-            users.map((user) => (
-           <Card style={{ width: '50%' }}>
-           <Card.Header className="cardheader"><center><h5>{user?.ID ? user?.ID : "default"}</h5></center></Card.Header>        
-            <Card.Body className="cardbody">
-            <Card.Text>{user?.Location ? user?.Location : "default"}</Card.Text>
-            <Button variant="primary" className="buttonbg">Aceptar viaje</Button>
-            </Card.Body>
-            </Card>
-            ))}
+            users.map((user) => {
+              if(user?.Location !== "")  {
+              return(
+                <div>
+                <Card style={{ width: '100%' }}>
+                <Card.Header className="cardheader"><center><h5>{user?.ID ? user?.ID : "ID no disponible"}</h5></center></Card.Header>        
+                <Card.Body className="cardbody">
+                <Card.Text>{user?.Location ? user?.Location : "Ubicación no disponible"}</Card.Text>
+                <Button variant="primary" className="buttonbg">Aceptar viaje</Button>
+                </Card.Body>
+                </Card>
+                <br/>
+                </div>
+              )
+              }
+            })}
         </Container>
     )
 }

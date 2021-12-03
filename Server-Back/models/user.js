@@ -13,6 +13,7 @@ const userSchema = new Schema(
         },
         Location: {
             type: String,
+            default: ""
             // required: true,
         }
     },  

@@ -51,13 +51,13 @@ function Olvidemicontraseña() {
                 };
 
                 
-               x.preventDefault(); 
-                emailjs.send(
-                    'service_0e2t94h',
-                    'template_pvx6uoh', 
-                    templateParams,
-                    'user_PcffbjIoKIDfhVAMbcRHK'
-                ).then(res=>{
+            //    x.preventDefault(); 
+            //     emailjs.send(
+            //         'service_0e2t94h',
+            //         'template_pvx6uoh', 
+            //         templateParams,
+            //         'user_PcffbjIoKIDfhVAMbcRHK'
+            //     ).then(res=>{
                     var exists = false, index = -1;
                     for(let i=0; i<users.length; i++){
                         if(users[i].ID === id){ //si encuentra al usuario
@@ -94,18 +94,20 @@ function Olvidemicontraseña() {
                                                 }).then(function() {
                                                     window.location = "/CodigoVerif";
                                                 });
+                                        }else{
+                                            alert('Código incorrecto.\nIntenta nuevamente');
                                         }
                                     }
                                  })
                             }
                             
                           })
-                        console.log(res);
+                        //console.log(res);
                     }else{
                         alert('El usuario ingresado no existe.\nIntenta nuevamente.')
                     }
                     
-                }).catch(err=>console.log("ERRORRR:\n",err));
+                // }).catch(err=>console.log("ERRORRR:\n",err));
             }
         }else{
             alert('Ingresa un correo.')
