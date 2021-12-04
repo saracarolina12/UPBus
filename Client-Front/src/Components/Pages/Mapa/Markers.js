@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import { Marker } from "react-leaflet";
-// import { IconLocation } from "./IconLocation";
 import markerIconPng from "leaflet/dist/images/marker-icon.png"
 import {Icon} from 'leaflet'
 
@@ -16,7 +15,6 @@ const Markers = () =>{
                     longitude: position.coords.longitude,
                     latitude: position.coords.latitude,
                 });
-
         }, 
         function(error){
             console.error("Error Code = " + error.code + " - " + error.message);
