@@ -10,6 +10,7 @@ import Nav from 'react-bootstrap/Nav';
 import { getUser} from '../../../Functions';
 import { createUser, SearchUser, LastIDs, updatePassword, NewLocation} from '../../../Api/index.js';
 import { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button'
 
 
 function PedirViaje() {
@@ -37,6 +38,10 @@ function PedirViaje() {
 
         
         <Container className="centrar">
+        <br/>
+        <Link to="/Bienvenido">
+                <Button className="regresar">Regresar al menú</Button>
+            </Link>
         <br/>
         <h3 className="iniciar">Pedir viaje</h3>
         <br/>

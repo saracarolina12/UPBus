@@ -4,6 +4,8 @@ import "leaflet/dist/leaflet.css";
 import Markers from "./Markers";
 import {useLocation, useNavigate} from "react-router-dom";
 import '../Mapa/Estilo.css';
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button'
 
 const MapView = (props)=>{
     //  const [state, setState] = useState({
@@ -36,16 +38,16 @@ const MapView = (props)=>{
     //      }
     //    }, [location]);
 
-       
-    //  console.log("this is the stored location: ", localStorage.getItem('UserLocation'));
-    //  console.log("this is the stored ID: ", localStorage.getItem('IDUsuario'));
-
 
     return (
         
         <div>
             <br/>
             <br/>
+            <Link to="/Bienvenido">
+                <Button className="regresar">Regresar al menú</Button>
+            </Link>
+            <br />
             <center><h3 className="letraTitulo">¡Aquí te encuentras en este momento!</h3></center>
             <br/>
             <MapContainer center={{lat:"21.824206943866415", lng:"-102.28368472570067"}} zoom={13} >

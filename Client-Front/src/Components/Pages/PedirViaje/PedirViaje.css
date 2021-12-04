@@ -53,3 +53,12 @@
   margin-left: 24%;
   color: brown;
 }
+
+
+.regresar{
+  background-color: #881739;
+  border: #881739;
+  font-size: 130%;
+  width: 10rem;
+  height: 3rem;
+}

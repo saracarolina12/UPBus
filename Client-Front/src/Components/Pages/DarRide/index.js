@@ -7,6 +7,7 @@ import Button from "react-bootstrap/esm/Button";
 import { useEffect, useState } from "react";
 import { updateUser, getUser } from "../../../Functions/index.js";
 import { updateConductor } from "../../../Api/index.js";
+import { Link } from 'react-router-dom';
 
 function DarRide() {
     const [users, setUser] = useState();
@@ -29,6 +30,10 @@ function DarRide() {
     return (
         <Container className="DarRide">
            <br/>
+           <Link to="/Bienvenido">
+                <Button className="back">Regresar al menú</Button>
+            </Link>
+            <br/>
            <h3 className="titulo">Selecciona la ubicacion por la que puedes pasar</h3>
            {users &&
             users.map((user) => {
