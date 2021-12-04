@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
 import { Marker } from "react-leaflet";
-import { IconLocation } from "./IconLocation";
-
+// import { IconLocation } from "./IconLocation";
+import markerIconPng from "leaflet/dist/images/marker-icon.png"
+import {Icon} from 'leaflet'
 
 const Markers = () =>{
     const [state, setState] = useState({
@@ -39,10 +40,19 @@ const Markers = () =>{
         localStorage.setItem('LAT_UP', JSON.stringify(21.824206943866415)); //guardo en variable global 
         localStorage.setItem('LNG_UP', JSON.stringify(-102.28368472570067)); //guardo en variable global 
     }
+
+    var redIcon = new Icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      });
     return(
         <>
         {(state.latitude != 0 && state.longitude != 0) &&
-            <Marker position={{lat:state.latitude, lng:state.longitude}} icon={IconLocation}/>
+            <Marker position={{lat:state.latitude, lng:state.longitude}} icon={redIcon}/>
         }
         </>
     );
