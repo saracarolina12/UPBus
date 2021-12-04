@@ -6,8 +6,8 @@ const router = express.Router();
 router.get('/', getUser);
 router.post('/', createUser);
 router.post('/', SearchUser);
-router.put('/', updatePassword);
-//router.put('/', NewLocation);
+//router.put('/', updatePassword);
+router.put('/', NewLocation);
 
 
 

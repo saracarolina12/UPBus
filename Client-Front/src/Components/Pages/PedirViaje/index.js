@@ -23,7 +23,6 @@ function PedirViaje() {
 
     const onSubmitHandler = async (x) => {
         localStorage.setItem('UserLocation', JSON.stringify(location)); //guardo en variable global de la ubicación del usuario
-        //var ID = JSON.parse(localStorage.getItem('IDUsuario'))
         NewLocation({ID:JSON.parse(localStorage.getItem('ID')), Location: JSON.parse(localStorage.getItem('UserLocation'))})
     }
 
@@ -64,8 +63,8 @@ function PedirViaje() {
                             <Nav.Link 
                                 className="inactive"
                                 componentClass={Link} 
-                                //href="/View" 
-                                //to="/View"
+                                href="/View" 
+                                to="/View"
                                 onClick={onSubmitHandler}
                                 >Ingresar ubicación actual</Nav.Link>
                         </center>
