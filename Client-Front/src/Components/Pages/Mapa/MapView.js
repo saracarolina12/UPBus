@@ -4,11 +4,16 @@ import "leaflet/dist/leaflet.css";
 import Markers from "./Markers";
 import {useLocation, useNavigate} from "react-router-dom";
 import '../Mapa/Estilo.css';
+import { createUser, SearchUser, LastIDs, updatePassword, NewLocation} from '../../../Api/index.js';
+import { useState, useEffect } from 'react';
+
 
 const MapView = (props)=>{
 
     var CurrLAT = JSON.parse(localStorage.getItem('LAT_Curr')), CurrLNG = JSON.parse(localStorage.getItem('LNG_Curr'));
-    
+    var Curr_Address = JSON.parse(localStorage.getItem('CurrAddress'))
+
+
     return (
         
         <div>

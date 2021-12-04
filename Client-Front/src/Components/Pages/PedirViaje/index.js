@@ -24,7 +24,7 @@ function PedirViaje() {
 
     const onSubmitHandler = async (x) => {
         localStorage.setItem('UserLocation', JSON.stringify(location)); //guardo en variable global de la ubicación del usuario
-        NewLocation({ID:JSON.parse(localStorage.getItem('ID')), Location: JSON.parse(localStorage.getItem('UserLocation'))})
+        // NewLocation({ID:JSON.parse(localStorage.getItem('ID')), Location: JSON.parse(localStorage.getItem('UserLocation'))})
     }
 
     useEffect(() => {
