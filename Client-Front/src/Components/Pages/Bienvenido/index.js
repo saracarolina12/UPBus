@@ -13,7 +13,7 @@ function Bienvenido() {
                     <h3>¡Bienvenido!</h3>
                     <h4><i>¿Qué te gustaría hacer?</i></h4>
                     <br/>
-                    <Link to="/PedirViaje">
+                    <Link to="/View">
                         <Button className="continuar">Pedir Viaje</Button>
                     </Link>
                     <br/>
