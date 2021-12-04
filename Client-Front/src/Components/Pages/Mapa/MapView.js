@@ -36,11 +36,9 @@ const MapView = (props)=>{
     //      }
     //    }, [location]);
 
-
-
        
-
-
+    //  console.log("this is the stored location: ", localStorage.getItem('UserLocation'));
+    //  console.log("this is the stored ID: ", localStorage.getItem('IDUsuario'));
 
 
     return (

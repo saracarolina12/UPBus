@@ -32,10 +32,21 @@ export const SearchUser = async(req, res)=>{
 }
 
 export const updatePassword = async(req,res)=>{
-    console.log("this ID: ", req.body.ID, ", new password: ", req.body.password);
+   console.log("this ID: ", req.body.ID, ", new password: ", req.body.password);
     try{
         const Newdata = await User.updateOne({ID: req.body.ID}, {$set:{password: req.body.password}}) //cambio de contraseña
         res.status(200).json(Newdata);
+    }
+    catch(error){
+        res.status(400).json({message: error.message})
+    }
+}
+
+export const NewLocation= async(req,res)=>{
+    console.log("****this ID: ", req.body.ID, ", new location: ", req.body.Location);
+    try{
+        const UserData = await User.updateOne({ID: req.body.ID}, {$set:{Location: req.body.Location}}) //cambio de contraseña
+        res.status(200).json(UserData);
     }
     catch(error){
         res.status(400).json({message: error.message})

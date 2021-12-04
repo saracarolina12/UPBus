@@ -7,27 +7,33 @@ import Col from "react-bootstrap/esm/Col";
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
-import { getUser, updateUser} from '../../../Functions';
+import { getUser} from '../../../Functions';
+import { createUser, SearchUser, LastIDs, updatePassword, NewLocation} from '../../../Api/index.js';
 import { useState, useEffect } from 'react';
 
 
 function PedirViaje() {
     const [user, setUser] = useState();
     const [location, setLocation] = useState('');
-    const updateUser = async (Location) => {
-        await updateUser(Location);
+
+    const LocationChange = async(x) => {
+        const {value} = x.target;
+        setLocation(value);
+    }
+
+    const onSubmitHandler = async (x) => {
+        localStorage.setItem('UserLocation', JSON.stringify(location)); //guardo en variable global de la ubicación del usuario
+        //var ID = JSON.parse(localStorage.getItem('IDUsuario'))
+        NewLocation({ID:JSON.parse(localStorage.getItem('ID')), Location: JSON.parse(localStorage.getItem('UserLocation'))})
     }
 
     useEffect(() => {
-        //console.log('todos');
         const fetchData = async() => {
         const result = await getUser();
-        //console.log('ferched Data', result)
         setUser(result)
         };
         fetchData();
-    }, []); //esto se corre la priemra vez que cargas la pagina porque esta vacio
-                //si esta vacio no se recargara automaticamente
+    }, []); 
     return (
 
         
@@ -51,19 +57,17 @@ function PedirViaje() {
                             </Form.Label>
                             <Col sm="10">
                             <Form.Control  placeholder="Ej: Villas Bonaterra, coto 2, calle Llano alto #307" 
-                            onChange={(event) => {
-                                setLocation(event.target.value);
-                            }}/>
+                            onChange={LocationChange}/>
                             </Col>
                         </Form.Group>
                         <center>   
                             <Nav.Link 
                                 className="inactive"
                                 componentClass={Link} 
-                                href="/View" 
-                                to="/View"
-                                onClick={()=> updateUser(Location)}
-                                >Ingresar ubiación actual</Nav.Link>
+                                //href="/View" 
+                                //to="/View"
+                                onClick={onSubmitHandler}
+                                >Ingresar ubicación actual</Nav.Link>
                         </center>
                     </Form>
                 </Card.Text>

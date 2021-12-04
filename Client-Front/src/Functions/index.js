@@ -11,16 +11,16 @@ export const getUser = async() => {
     }
 }
 
-// export const createUser = async({ID, password}) => {
-//     try {
-//         const {data} = await api.createUser({ID, password});
+export const createUser = async({ID, password}) => {
+    try {
+        const {data} = await api.createUser({ID, password});
         
-//         return data;
-//     }
-//     catch(error) {
-//         console.log(error);
-//     }
-// }
+        return data;
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
 
 export const SearchUser = async({ID})=>{
     try {
@@ -45,6 +45,16 @@ export const updateUser = async({Location}) => {
 export const updatePassword = async({newdata}) =>{
     try{
         const {data} = api.updatePassword({newdata});
+        return data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+export const NewLocation = async({UserData}) =>{
+    try{
+        const {data} = api.NewLocation({UserData});
         return data;
     }
     catch(error){
