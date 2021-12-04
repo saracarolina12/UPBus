@@ -53,10 +53,10 @@ function Olvidemicontraseña() {
                 
             //    x.preventDefault(); 
             //     emailjs.send(
-            //         'service_0e2t94h',
-            //         'template_pvx6uoh', 
+            //         'service_k5o001o',
+            //         'template_f91mz7y', 
             //         templateParams,
-            //         'user_PcffbjIoKIDfhVAMbcRHK'
+            //         'user_LqaHdDx3c72xQnYyLkmr3'
             //     ).then(res=>{
                     var exists = false, index = -1;
                     for(let i=0; i<users.length; i++){
@@ -102,7 +102,7 @@ function Olvidemicontraseña() {
                             }
                             
                           })
-                        //console.log(res);
+                        // console.log(res);
                     }else{
                         alert('El usuario ingresado no existe.\nIntenta nuevamente.')
                     }
