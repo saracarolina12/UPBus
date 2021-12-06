@@ -43,7 +43,7 @@ function Navb() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link componentClass={Link} href="/PedirViaje" to="/PedirViaje">Pedir viaje</Nav.Link>
+                    <Nav.Link componentClass={Link} href="/View" to="/View">Pedir viaje</Nav.Link>
                     <Nav.Link componentClass={Link} href="/DarRide" to="/DarRide">Dar ride</Nav.Link>
                 </Nav> 
                  <Col className="izq"><p className="textFoot"></p></Col>
