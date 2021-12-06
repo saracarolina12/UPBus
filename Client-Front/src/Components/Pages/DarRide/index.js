@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { updateUser, getUser } from "../../../Functions/index.js";
 import { Link } from 'react-router-dom';
 import emailjs from 'emailjs-com'
+import Swal from 'sweetalert2'
 
 function DarRide() {
   const [users, setUser] = useState();
@@ -42,6 +43,13 @@ function DarRide() {
       templateParams,
       'user_LqaHdDx3c72xQnYyLkmr3'
     ).then((result) => {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Tu viaje ha sido confirmado.\nRevisa tu correo para más detalles',
+          timer: 2500,
+          timerProgressBar: false
+        })
         console.log(result.text);
     }, (error) => {
         console.log(error.text);

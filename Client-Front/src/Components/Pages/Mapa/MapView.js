@@ -30,15 +30,35 @@ const MapView = (props)=>{
             <Markers />
             
         </MapContainer>
-        <h1 className="aaaa1">Instrucciones:</h1>
-        <p className="aaaa"><b>1. Si tu localización no aparece, pese a que permitiste el acceso a tu ubicación, se debe configurar manualmente.</b></p>
-        <p className="aaaa"><b>2. Entrar a Configuración de privacidad de ubicación localizado en Ajustes. </b></p>
-        <p className="aaaa"><b>3. Cambiar el botón a Activado en Permitir que las aplicaciones accedan a tu dispositivo.</b></p>
-        <p className="aaaa"><b>4. Borrar el Historial de ubicaciones.</b></p>
-        <p className="aaaa"><b>5. Activar la opción de Mapas en Elegir que aplicaciones pueden acceder a tu ubicación excata</b> </p>
-        <p className="aaaa"><b>6. Ingresar a Establecer como predeterminado, buscando tu ubicación en el mapa y fijandola.</b> </p>
-        <p className="aaaa"><b>7. Volver a la página y refrescarla.</b></p>
-        <br/><br/><br/>
+
+        <div className ="alinearDiv">
+            <h3 className="letra2">¿Cómo funciona?</h3>
+            <p>
+               El mapa te muestra tu ubicación actual, si no es así, regresa a pedir viaje
+               y escribe la ubicación en dónde te encuentras.
+            </p>
+            <p>   
+               Una vez que hayas ingresado tu ubicación, deberás esperar a que un pasajero
+               la vea para saber donde te recogerá. <b>¡No olvides revisar tu correo institucional, <br/>
+               recuerda que por ahí se enviará el nombre de la persona que te recogerá!</b>
+            </p>
+            <br/>
+            <br/>
+            <h3 className="letra2">Configuración del mapa</h3>
+            <p>
+               Algunas computadoras no tienen la accesibilidad de saber tu ubicación en todo momento,
+               no te preocupes, aquí te explicaremos <b>7 sencillos pasos </b >que <br/> debes de seguir 
+               para que el mapa funcione
+            </p>
+            <p class="alinearDiv">   
+                1. Entrar a Configuración de privacidad de ubicación localizado en Ajustes. <br/>
+                2. Cambiar el botón a Activado en Permitir que las aplicaciones accedan a tu dispositivo. <br/>
+                3. Borrar el Historial de ubicaciones. <br/>
+                4. Activar la opción de Mapas en Elegir que aplicaciones pueden acceder a tu ubicación excata. <br/>
+                5. Ingresar a Establecer como predeterminado, buscando tu ubicación en el mapa y fijandola. <br/>
+                6. Volver a la página y refrescarla. <br/>
+            </p>
+        </div>
         </div>
         
     );

@@ -43,13 +43,29 @@ export const updatePassword = async(req,res)=>{
 }
 
 export const NewLocation= async(req,res)=>{
-    console.log("****this ID: ", req.body.ID, ", new location: ", req.body.Location);
-    try{
-        const UserData = await User.updateOne({ID: req.body.ID}, {$set:{Location: req.body.Location}}) //cambio de contraseña
-        res.status(200).json(UserData);
+    console.log("**this ID: ", req.body.ID, ", new location: ", req.body.Location);
+    console.log("**this ID: ", req.body.ID, ", new password: ", req.body.password);
+
+    if(typeof req.body.Location!=="undefined"){
+        console.log(req.body.Location)
+        try{
+            const UserData = await User.updateOne({ID: req.body.ID}, {$set:{Location: req.body.Location}}) //cambio de contraseña
+            res.status(200).json(UserData);
+        }
+        catch(error){
+            res.status(400).json({message: error.message})
+        }
     }
-    catch(error){
-        res.status(400).json({message: error.message})
+    else if(req.body.password!=="undefined"){
+        console.log(req.body.password)
+
+        try{
+            const Newdata = await User.updateOne({ID: req.body.ID}, {$set:{password: req.body.password}}) //cambio de contraseña
+            res.status(200).json(Newdata);
+        }
+        catch(error){
+            res.status(400).json({message: error.message})
+        }
     }
 }
 
