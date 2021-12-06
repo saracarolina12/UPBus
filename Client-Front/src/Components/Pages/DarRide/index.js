@@ -24,7 +24,7 @@ function DarRide() {
     for (let i = 1; i<nombrec.length-1; i++) {
       nombrefinal += nombrec[i];
     }
-    console.log("prueba")
+    //console.log("prueba")
 
     correofinal = nombrefinal+"@up.edu.mx"
     console.log(correofinal)
@@ -46,8 +46,9 @@ function DarRide() {
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Tu viaje ha sido confirmado.\nRevisa tu correo para más detalles',
-          timer: 2500,
+          title: `Tu viaje ha sido confirmado.`,
+          text: 'Revisa tu correo para más detalles.',
+          timer: 2800,
           timerProgressBar: false
         })
         console.log(result.text);
