@@ -13,7 +13,9 @@ function App() {
 
     <Rutas />
     </div>
-
+    <br/>
+    <br/>
+    <br/>
     <Foot />
     </div>
     </>

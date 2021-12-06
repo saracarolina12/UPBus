@@ -15,7 +15,9 @@ const Rutas = () => {
     return (
         <div>
             <Router>
-                <Navb />    
+                <Navb /> 
+                <br/>
+                <br/>   
                 <Routes>
                     <Route path="/" element = {<Home/>} />
                     <Route path="/PedirViaje" element = {<PedirViaje/>}/>

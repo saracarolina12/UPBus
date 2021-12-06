@@ -8,26 +8,53 @@ import logo from './logo.png'
 import { Link } from "react-router-dom";
 import Col from "react-bootstrap/esm/Col";
 
+function CS (){
+    localStorage.setItem("IDUsuario", JSON.stringify(0)); 
+}
+
+
 function Navb() {
-    return (
-    <Navbar sticky="top" collapseOnSelect expand="lg" variant="dark" className="colorNavb">
-    <Container>
-    <Navbar.Brand componentClass={Link} href="/" to="/"><img img src={logo} alt="Logo" className="imgNavb"/></Navbar.Brand>
-    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-    <Navbar.Collapse id="responsive-navbar-nav">
-        {/* <Nav className="me-auto">
-            <Nav.Link componentClass={Link} href="/PedirViaje" to="/PedirViaje">Pedir viaje</Nav.Link>
-            <Nav.Link componentClass={Link} href="/DarRide" to="/DarRide">Dar ride</Nav.Link>
-        </Nav> */}
-         <Col className="izq"><p className="textFoot"></p></Col>
-        <Nav>
-            <Nav.Link componentClass={Link} href="/IniciarSesion" to="/IniciarSesion">Iniciar sesión</Nav.Link>
-            <Nav.Link componentClass={Link} href="/Registrate" to="/Registrate" eventKey={2} >Regístrate</Nav.Link>
-        </Nav>
-    </Navbar.Collapse>
-    </Container>
-    </Navbar>
-    )
+    if (localStorage.getItem("IDUsuario") == "0") {
+        return (
+            <Navbar sticky="top" collapseOnSelect expand="lg" variant="dark" className="colorNavb">
+            <Container>
+            <Navbar.Brand componentClass={Link} href="/" to="/"><img img src={logo} alt="Logo" className="imgNavb"/></Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                {/* <Nav className="me-auto">
+                    <Nav.Link componentClass={Link} href="/PedirViaje" to="/PedirViaje">Pedir viaje</Nav.Link>
+                    <Nav.Link componentClass={Link} href="/DarRide" to="/DarRide">Dar ride</Nav.Link>
+                </Nav> */}
+                 <Col className="izq"><p className="textFoot"></p></Col>
+                <Nav>
+                    <Nav.Link componentClass={Link} href="/IniciarSesion" to="/IniciarSesion">Iniciar sesión</Nav.Link>
+                    <Nav.Link componentClass={Link} href="/Registrate" to="/Registrate" eventKey={2} >Regístrate</Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+            </Container>
+            </Navbar>
+        )
+    }
+    else {
+             return (
+            <Navbar sticky="top" collapseOnSelect expand="lg" variant="dark" className="colorNavb">
+            <Container>
+            <Navbar.Brand componentClass={Link} href="/" to="/"><img img src={logo} alt="Logo" className="imgNavb"/></Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="me-auto">
+                    <Nav.Link componentClass={Link} href="/PedirViaje" to="/PedirViaje">Pedir viaje</Nav.Link>
+                    <Nav.Link componentClass={Link} href="/DarRide" to="/DarRide">Dar ride</Nav.Link>
+                </Nav> 
+                 <Col className="izq"><p className="textFoot"></p></Col>
+                <Nav>
+                    <Nav.Link componentClass={Link} href="/IniciarSesion" to="/IniciarSesion" onClick={CS}>Cerrar sesión</Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+            </Container>
+            </Navbar>
+            )
+    }
 }
 
 export default Navb;

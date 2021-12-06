@@ -9,7 +9,6 @@ import Button from 'react-bootstrap/Button'
 function Bienvenido() {
     return (
         <Container className="centrar">
-                    <br/> <br/><br/><br/><br/>
                     <h3>¡Bienvenido!</h3>
                     <h4><i>¿Qué te gustaría hacer?</i></h4>
                     <br/>

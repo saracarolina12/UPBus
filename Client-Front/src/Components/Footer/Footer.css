@@ -1,12 +1,18 @@
-.imgFoot {
-    width: 13%;
+/* .imgFoot {
+    width: 300px;
+} */
+.alinear1 {
+    padding-left:8%;
 }
-
-.pegarDerecha {
-    display: flex;
-    align-items: flex-end;
-    justify-content: right;
+.alinear2 {
+    padding-left:28%;
 }
 .footercolor{
-    background-color: rgba(236, 231, 225, 0.89);  
+    background-color: #881739;
 }  
+.textFoot {
+    color: white;
+}
+.colorU {
+    color: rgb(200, 153, 166);
+}
