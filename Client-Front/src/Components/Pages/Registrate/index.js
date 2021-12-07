@@ -75,7 +75,7 @@ function Registrate() {
                     let timerInterval
                     Swal.fire({
                         title: 'Este usuario ya existe.\n¡Te invitamos a iniciar sesión!',
-                        timer: 2300,
+                        timer: 2500,
                         timerProgressBar: true,
                     didOpen: () => {
                         Swal.showLoading()
