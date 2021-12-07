@@ -44,3 +44,16 @@
                 Navegador:
                     -Acceder en tu navegador a:
                             http://localhost:8000/user
+
+# Configuración de ubicación
+
+    1. Acceder a la "Configuración de privacidad de ubicación" dentro de windows.
+    2. Activar la opción permite que las aplicaciones accedan a tu ubicación.
+    3. Activar la ubicación precisa para la aplicación "Mapas".
+    4. Da click en "Establecer ubicación predeterminada".
+    5. Da click en "Cambiar".
+    6. Da click en "Elegir ubicación".
+    7. Coloca tu ubicación en el mapa:
+        arrastrando manualmente
+        con el botón "Mostrar mi ubicación"
+    8. Da click en establecer.
