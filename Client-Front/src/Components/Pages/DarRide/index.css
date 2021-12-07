@@ -1,40 +1,47 @@
-
-.titulo{
-    text-align: center;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 250%;
-    color: #881739;  
-    letter-spacing: 10px;
+.titulo {
+  text-align: center;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 250%;
+  color: #881739;
+  letter-spacing: 10px;
 }
 
-.DarRide{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.DarRide {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .cardheader {
-    color: #e0dbd6cb;
-    background-color: #881739;
+  color: #e0dbd6cb;
+  background-color: #881739;
 }
 
 .cardbody {
-    background-color: #f5e6db;
+  background-color: #f5e6db;
 }
 
-.buttonbg{
-    color: #e0dbd6cb;
-    background-color: #881739;
-    border: #881739;
-    width: 100%;
-
+.buttonbg {
+  color: #e0dbd6cb;
+  background-color: #881739;
+  border: #881739;
+  width: 100%;
 }
 
-.buttonbg:hover{
-    background-color: #7b1634;
-    color: #fbefe1cb;
+.buttonbg:hover {
+  background-color: #881739;
+  color: #fbefe1cb;
 }
-
+.buttonbg:active {
+  background-color: #70132f;
+  color: #fbefe1cb;
+}
 .parr {
-    font-size: large;
+  font-size: large;
+}
+.tamImg {
+  width: 3%;
+}
+.flecha {
+  margin-left: 5%;
 }

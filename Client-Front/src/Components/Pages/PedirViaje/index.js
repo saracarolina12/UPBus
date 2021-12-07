@@ -11,6 +11,7 @@ import { getUser} from '../../../Functions';
 import { createUser, SearchUser, LastIDs, updatePassword, NewLocation} from '../../../Api/index.js';
 import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button'
+import Flecha from "../../Pages/DarRide/Flecha.png"
 
 
 function PedirViaje() {
@@ -24,7 +25,7 @@ function PedirViaje() {
 
     const onSubmitHandler = async (x) => {
         localStorage.setItem('UserLocation', JSON.stringify(location)); //guardo en variable global de la ubicación del usuario
-        // NewLocation({ID:JSON.parse(localStorage.getItem('ID')), Location: JSON.parse(localStorage.getItem('UserLocation'))})
+        NewLocation({ID:JSON.parse(localStorage.getItem('ID')), Location: JSON.parse(localStorage.getItem('UserLocation'))})
     }
 
     useEffect(() => {
@@ -78,7 +79,11 @@ function PedirViaje() {
                 </Card.Body>
             </Card>
 
-
+            <br/>
+           <Link to="/Bienvenido">
+                <img src={Flecha} className="back"></img>
+            </Link>
+            <br/>
         </Container>
     )
 }

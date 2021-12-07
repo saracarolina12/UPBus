@@ -6,6 +6,8 @@ import {useLocation, useNavigate} from "react-router-dom";
 import '../Mapa/Estilo.css';
 import { createUser, SearchUser, LastIDs, updatePassword, NewLocation} from '../../../Api/index.js';
 import { useState, useEffect } from 'react';
+import Flecha from "../../Pages/DarRide/Flecha.png"
+import { Link } from 'react-router-dom';
 
 
 const MapView = (props)=>{
@@ -15,10 +17,15 @@ const MapView = (props)=>{
 
 
     return (
-        
         <div>
-            <br/>
-            <br/>
+            <div className="flecha">
+            <Link to="/Bienvenido">
+                    <img src={Flecha} className="tamImg"></img>
+                </Link>
+                <br/>
+                <br/>
+                <br/>
+            </div>
             <center><h3 className="letraTitulo">¡Aquí te encuentras en este momento!</h3></center>
             <br/>
             {/* <MapContainer center={{lat:"21.824206943866415", lng:"-102.28368472570067"}} zoom={16} > */}
@@ -34,11 +41,11 @@ const MapView = (props)=>{
         <div className ="alinearDiv">
             <h3 className="letra2">¿Cómo funciona?</h3>
             <p>
-               El mapa te muestra tu ubicación actual, si no es así, regresa a pedir viaje
-               y escribe la ubicación en dónde te encuentras.
+               El mapa te muestra tu ubicación actual, si no es así, vete a nuestra sección
+               de configuración de mapa.
             </p>
             <p>   
-               Una vez que hayas ingresado tu ubicación, deberás esperar a que un pasajero
+               Una vez que hayas ingresado tu ubicación, deberás esperar a que un conductor
                la vea para saber donde te recogerá. <b>¡No olvides revisar tu correo institucional, <br/>
                recuerda que por ahí se enviará el nombre de la persona que te recogerá!</b>
             </p>
@@ -51,11 +58,11 @@ const MapView = (props)=>{
                para que el mapa funcione
             </p>
             <p class="alinearDiv">   
-                1. Entrar a Configuración de privacidad de ubicación localizado en Ajustes. <br/>
-                2. Cambiar el botón a Activado en Permitir que las aplicaciones accedan a tu dispositivo. <br/>
+                1. Entrar a <b>Configuración de privacidad de ubicación </b> localizado en Configuración de Windows. <br/>
+                2. Cambiar el botón a <b>Activado</b> en Permitir que las aplicaciones accedan a tu dispositivo. <br/>
                 3. Borrar el Historial de ubicaciones. <br/>
-                4. Activar la opción de Mapas en Elegir que aplicaciones pueden acceder a tu ubicación excata. <br/>
-                5. Ingresar a Establecer como predeterminado, buscando tu ubicación en el mapa y fijandola. <br/>
+                4. Activar la opción de <b>Maps</b> en Elegir que aplicaciones pueden acceder a tu ubicación excata. <br/>
+                5. Ingresar a <b>Establecer predeterminada</b>, buscando tu ubicación en el mapa y fijandola. <br/>
                 6. Volver a la página y refrescarla. <br/>
             </p>
         </div>

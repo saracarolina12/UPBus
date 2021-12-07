@@ -42,15 +42,15 @@ export const updateUser = async({Location}) => {
     }
 }
 
-export const updatePassword = async({newdata}) =>{
-    try{
-        const {data} = api.updatePassword({newdata});
-        return data;
-    }
-    catch(error){
-        console.log(error);
-    }
-}
+// export const updatePassword = async({newdata}) =>{
+//     try{
+//         const {data} = api.updatePassword({newdata});
+//         return data;
+//     }
+//     catch(error){
+//         console.log(error);
+//     }
+// }
 
 export const NewLocation = async({UserData}) =>{
     try{

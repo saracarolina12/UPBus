@@ -51,13 +51,13 @@ function Olvidemicontraseña() {
                 };
 
                 
-            //    x.preventDefault(); 
-            //     emailjs.send(
-            //         'service_k5o001o',
-            //         'template_f91mz7y', 
-            //         templateParams,
-            //         'user_LqaHdDx3c72xQnYyLkmr3'
-            //     ).then(res=>{
+               x.preventDefault(); 
+                emailjs.send(
+                    'service_k5o001o',
+                    'template_f91mz7y', 
+                    templateParams,
+                    'user_LqaHdDx3c72xQnYyLkmr3'
+                ).then(res=>{
                     var exists = false, index = -1;
                     for(let i=0; i<users.length; i++){
                         if(users[i].ID === id){ //si encuentra al usuario
@@ -107,7 +107,7 @@ function Olvidemicontraseña() {
                         alert('El usuario ingresado no existe.\nIntenta nuevamente.')
                     }
                     
-                // }).catch(err=>console.log("ERRORRR:\n",err));
+                }).catch(err=>console.log("ERRORRR:\n",err));
             }
         }else{
             alert('Ingresa un correo.')

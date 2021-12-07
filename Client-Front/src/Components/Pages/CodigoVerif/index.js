@@ -8,7 +8,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav'
-import { createUser, SearchUser, LastIDs, updatePassword} from '../../../Api/index.js';
+import { createUser, SearchUser, LastIDs, updatePassword, NewLocation} from '../../../Api/index.js';
 import { useEffect, useState } from 'react';
 import { getUser } from '../../../Functions';
 import React from 'react';
@@ -59,7 +59,7 @@ function CodigoVerif() {
             else{
                 if(Uno == Dos){
                     var ID = JSON.parse(localStorage.getItem('ID'));
-                    updatePassword({ID: ID, password: Uno}) //le cambia la contraseña al usuario
+                    NewLocation({ID: ID, password: Uno}) //le cambia la contraseña al usuario
                     let timerInterval
                     Swal.fire({
                         position: 'center',

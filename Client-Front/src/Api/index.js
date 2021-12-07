@@ -10,10 +10,15 @@ export const SearchUser = (IDtosearch) => axios.get(url,IDtosearch);
 
 export const updateUser = (Location) => axios.put(url, {Location:Location});
 
-export const updatePassword = (newdata) =>axios.put(url, {ID: newdata.ID, password: newdata.password})
+//export const updatePassword = (newdata) =>axios.put(url, {ID: newdata.ID, password: newdata.password})
 
 export const NewLocation = (UserData) =>{
-   axios.put(url, {ID: UserData.ID, Location: UserData.Location});
+   if (typeof UserData.Location !== "undefined") {
+      axios.put(url, {ID: UserData.ID, Location: UserData.Location});
+   }
+   else if (typeof UserData.password !== "undefined"){
+      axios.put(url, {ID: UserData.ID, password: UserData.password});
+   }
 }
 
 

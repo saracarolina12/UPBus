@@ -5,10 +5,12 @@ import Container from "react-bootstrap/esm/Container";
 import Card from "react-bootstrap/esm/Card";
 import Button from "react-bootstrap/esm/Button";
 import { useEffect, useState } from "react";
-import { updateUser, getUser } from "../../../Functions/index.js";
+import { getUser } from "../../../Functions/index.js";
+import { NewLocation } from "../../../Api/index.js";
 import { Link } from 'react-router-dom';
 import emailjs from 'emailjs-com'
 import Swal from 'sweetalert2'
+import Flecha from '../../Pages/DarRide/Flecha.png';
 
 function DarRide() {
   const [users, setUser] = useState();
@@ -76,6 +78,9 @@ function DarRide() {
 
 
     //limpiar ubicacion del pasajero
+    location = "";
+    NewLocation({ID:id, Location: location});
+
     //aumentar horas
   };
 
@@ -88,19 +93,24 @@ function DarRide() {
       }, [users]);
 
     return (
-        <Container className="DarRide">
-           <br/>
+        <div>
+        <div className="flecha">
            <Link to="/Bienvenido">
-                <Button className="back">Regresar al menú</Button>
+                <img src={Flecha} className="tamImg"></img>
             </Link>
             <br/>
+            <br/>
+            <br/>
+        </div>
+        <Container className="DarRide">
            <h3 className="titulo">Selecciona la ubicacion por la que puedes pasar</h3>
+           <br/>
            {users &&
             users.map((user) => {
               if(user?.Location !== "")  {
               return(
-                <div>
-                <Card style={{ width: '100%' }} key = {user.Location}> 
+                <div style={{ minWidth: '60%' }}>
+                <Card key = {user.Location}> 
                   <Card.Header className="cardheader"><center><h5>{user?.ID ? user?.ID : "ID no disponible"}</h5></center></Card.Header>        
                   <Card.Body className="cardbody">
                   <Card.Text>{user?.Location ? user?.Location : "Ubicación no disponible"}</Card.Text>
@@ -109,10 +119,14 @@ function DarRide() {
                 </Card>
                 <br/>
                 </div>
+            
               )
               }
             })}
+            
+
         </Container>
+        </div>
     )
 }
 
