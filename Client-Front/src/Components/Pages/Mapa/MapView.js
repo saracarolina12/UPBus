@@ -41,8 +41,8 @@ const MapView = (props)=>{
         <div className ="alinearDiv">
             <h3 className="letra2">¿Cómo funciona?</h3>
             <p>
-               El mapa te muestra tu ubicación actual, si no es así, vete a nuestra sección
-               de configuración de mapa.
+               El mapa te muestra tu ubicación actual, de no ser así, dirígete a la sección
+               de configuración del mapa.
             </p>
             <p>   
                Una vez que hayas ingresado tu ubicación, deberás esperar a que un conductor
