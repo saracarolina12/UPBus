@@ -1,7 +1,7 @@
 # React_UPBus
 
 
-#Client-Front
+# Client-Front
     1. Access the correct directory:
         cd Client-Front
     2. Install dependencies:
@@ -9,7 +9,7 @@
     3. Run project:
         npm start (localhost:3000)
 
-#Server-Back
+# Server-Back
     1. Access the correct directory:
         cd Server-Back
     2. Install dependencies:
