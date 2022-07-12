@@ -1,4 +1,3 @@
-# React_UPBus
 
 
 # Client-Front
@@ -15,7 +14,7 @@
     2. Install dependencies:
         npm i
     3. Run project:
-        npm run runs (localhost:8000)
+        npm run server (localhost:8000)
 
     To see how users are added when registering:
         Option 1:
