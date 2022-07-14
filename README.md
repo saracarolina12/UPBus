@@ -1,6 +1,9 @@
+# UP-Bus
+Web App that helps UP students find another UP student that can take them to campus.
+![click](https://user-images.githubusercontent.com/54753356/179035707-f518344e-fe0d-4206-9de9-742c17536e01.jpeg)
 
 
-# Client-Front
+## Client-Front
     1. Access the correct directory:
         cd Client-Front
     2. Install dependencies:
@@ -8,7 +11,7 @@
     3. Run project:
         npm start (localhost:3000)
 
-# Server-Back
+## Server-Back
     1. Access the correct directory:
         cd Server-Back
     2. Install dependencies:
